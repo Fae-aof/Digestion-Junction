@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b5tw7q72jl324"]
+
+[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_7uech"]
+[ext_resource type="Script" uid="uid://cxq5buqd31rdr" path="res://Nutrients/starch.gd" id="1_lqs2g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4yjv"]
+atlas = ExtResource("1_7uech")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc7nm"]
+atlas = ExtResource("1_7uech")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabqq"]
+atlas = ExtResource("1_7uech")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n5sb"]
+atlas = ExtResource("1_7uech")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_d4yjv")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_xc7nm")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_dabqq")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_5n5sb")
+}],
+"loop": 1,
+"name": &"Starch",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 25.079872
+
+[node name="Starch" type="RigidBody2D" unique_id=521101774 groups=["starch"]]
+script = ExtResource("1_lqs2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
+scale = Vector2(2.465, 2.465)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"Starch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
+shape = SubResource("CircleShape2D_1vivr")
