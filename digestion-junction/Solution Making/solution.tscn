@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://c0ygwenkoxpd2"]
 
-[ext_resource type="Texture2D" uid="uid://d08sn5fd15swx" path="res://Milestone 1 Sprites/untitled@4x (1).png" id="1_k2oew"]
+[ext_resource type="Texture2D" uid="uid://ce4hekv5b6r6y" path="res://Milestone 1 Sprites/untitled@4x (2).png" id="1_a8vvq"]
 [ext_resource type="Script" uid="uid://brpp668jfp5wy" path="res://Solution Making/solution.gd" id="2_a8vvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
 size = Vector2(255, 253)
 
 [node name="Solution" type="Sprite2D" unique_id=1068114312]
-modulate = Color(1, 1, 1, 0.5137255)
+modulate = Color(1, 1, 1, 0.3254902)
 scale = Vector2(1, 0.05)
-texture = ExtResource("1_k2oew")
+texture = ExtResource("1_a8vvq")
 script = ExtResource("2_a8vvq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2002251178]

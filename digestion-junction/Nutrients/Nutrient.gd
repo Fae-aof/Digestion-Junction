@@ -9,6 +9,7 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	scale = Vector2(0.9, 0.9)
 	animation.play("Molecule")
 
 func break_down():
