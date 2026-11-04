@@ -3,55 +3,116 @@
 [ext_resource type="Script" uid="uid://bkhst1y0o17i8" path="res://Solution Making/solution_maker.gd" id="1_l5vax"]
 [ext_resource type="Texture2D" uid="uid://dadnwwjlpeg53" path="res://Milestone 1 Sprites/arrow.png" id="2_pidr5"]
 [ext_resource type="PackedScene" uid="uid://c0ygwenkoxpd2" path="res://Solution Making/solution.tscn" id="3_d2d64"]
-[ext_resource type="PackedScene" uid="uid://b5tw7q72jl324" path="res://Nutrients/Starch.tscn" id="3_pidr5"]
 [ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="4_g6usb"]
+[ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_jpax7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.7313315, 0.7313315, 0.7313314, 1)
 
 [node name="Solution Maker" type="CanvasLayer" unique_id=447134398]
 script = ExtResource("1_l5vax")
 
 [node name="Panel" type="Panel" parent="." unique_id=936418971]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
 [node name="pH" type="Label" parent="." unique_id=923362954]
-offset_left = 132.0
-offset_top = 80.0
-offset_right = 279.0
-offset_bottom = 167.0
+offset_left = 210.51999
+offset_top = 27.0
+offset_right = 366.52
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 63
 text = "pH: 7"
 horizontal_alignment = 1
 
 [node name="Increase pH" type="Button" parent="." unique_id=1389431035]
-offset_left = 226.00002
-offset_top = 203.00002
-offset_right = 2234.0
-offset_bottom = 1220.0
+offset_left = 304.52002
+offset_top = 150.00002
+offset_right = 2312.52
+offset_bottom = 1167.0
 scale = Vector2(0.065, 0.065)
 icon = ExtResource("2_pidr5")
 flat = true
 
 [node name="Decrease pH" type="Button" parent="." unique_id=1050763025]
-offset_left = 188.0
-offset_top = 201.0
-offset_right = 2196.0
-offset_bottom = 1218.0
+offset_left = 266.52
+offset_top = 148.0
+offset_right = 2274.52
+offset_bottom = 1165.0
 scale = Vector2(-0.065, 0.065)
 icon = ExtResource("2_pidr5")
 flat = true
 
-[node name="Starch" parent="." unique_id=521101774 instance=ExtResource("3_pidr5")]
-position = Vector2(916, 266)
-
 [node name="Container" parent="." unique_id=1660461192 instance=ExtResource("4_g6usb")]
-position = Vector2(927, 470)
+position = Vector2(1061, 509)
 
 [node name="Solution" parent="." unique_id=135502296 instance=ExtResource("3_d2d64")]
-position = Vector2(928, 575)
+position = Vector2(1071, 640)
+
+[node name="Fill up" type="Button" parent="." unique_id=783053967]
+offset_left = 35.0
+offset_top = 618.0
+offset_right = 345.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 42
+text = "Fill Up"
+
+[node name="Reset" type="Button" parent="." unique_id=268417150]
+offset_left = 404.0
+offset_top = 618.0
+offset_right = 714.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 42
+text = "Reset"
+
+[node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_jpax7")]
+position = Vector2(1056, 356)
+
+[node name="Starch button" type="Button" parent="." unique_id=1074081082]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -411.0
+offset_top = 60.0
+offset_right = -247.0
+offset_bottom = 127.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Starch"
+
+[node name="Protein button" type="Button" parent="." unique_id=2125614504]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
+offset_top = 60.0
+offset_right = -43.0
+offset_bottom = 127.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Protein"
+
+[node name="Fats button" type="Button" parent="." unique_id=477598013]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_top = 153.0
+offset_right = -145.0
+offset_bottom = 220.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Fats"
 
 [connection signal="pressed" from="Increase pH" to="." method="_on_increase_p_h_pressed"]
 [connection signal="pressed" from="Decrease pH" to="." method="_on_decrease_p_h_pressed"]
+[connection signal="pressed" from="Fill up" to="." method="_on_fill_up_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Starch button" to="Spawner" method="_on_starch_button_pressed"]
+[connection signal="pressed" from="Protein button" to="Spawner" method="_on_protein_button_pressed"]
+[connection signal="pressed" from="Fats button" to="Spawner" method="_on_fats_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co71wxdgxlkv"]
+
+[ext_resource type="Script" uid="uid://cspjapkojkq3s" path="res://Spawner/spawner.gd" id="1_10h3l"]
+
+[node name="Spawner" type="Node2D" unique_id=261790585]
+script = ExtResource("1_10h3l")
+
+[node name="Top_Left" type="Marker2D" parent="." unique_id=1804534324]
+position = Vector2(-82, -26)
+
+[node name="Bottom_Right" type="Marker2D" parent="." unique_id=41511551]
+position = Vector2(90, 16)

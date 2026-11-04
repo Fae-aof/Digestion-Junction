@@ -29,6 +29,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 starch=""
+protein=""
+fats=""
 
 [physics]
 

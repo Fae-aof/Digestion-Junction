@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 @onready var pH_label: Label = $pH
+@onready var solution: Area2D = $Solution
+@onready var spawner: Node2D = $Spawner
 
 var pH = 7
 
@@ -20,3 +22,13 @@ func _on_increase_p_h_pressed() -> void:
 func _on_decrease_p_h_pressed() -> void:
 	pH -= 1
 	set_pH()
+
+
+func _on_fill_up_pressed() -> void:
+	solution.fill_up()
+
+func _on_reset_pressed() -> void:
+	solution.empty()
+	var all_molecules = spawner.get_children()
+	for i in all_molecules:
+		i.queue_free()

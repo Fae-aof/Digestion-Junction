@@ -40,13 +40,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 25.079872
+radius = 21.095022
 
 [node name="Starch" type="RigidBody2D" unique_id=521101774 groups=["starch"]]
 script = ExtResource("1_lqs2g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
-scale = Vector2(2.465, 2.465)
+scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"Starch"
 

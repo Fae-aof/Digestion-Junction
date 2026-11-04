@@ -12,6 +12,6 @@ func _ready() -> void:
 func break_into_maltose():
 	for i in starch_length:
 		var maltose = maltose_scene.instantiate()
-		maltose.global_position = global_position + Vector2(randf_range(-0.1, 0.1), randf_range(-0.1, 0.1))
-		get_parent().add_child(maltose)
+		get_parent().add_child.call_deferred(maltose)
+		maltose.set_deferred("global_position", global_position + Vector2(randf_range(-0.1, 0.1), randf_range(-0.1, 0.1)))
 	queue_free()
