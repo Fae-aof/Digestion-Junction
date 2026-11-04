@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://d1tamq3kgnvad"]
 
+[ext_resource type="PackedScene" uid="uid://dmerwsw4q4jwf" path="res://Nutrients/Polypeptide.tscn" id="2_8k8lm"]
+[ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="2_pqf0s"]
 [ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="2_ywt6l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eu0ob"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqf0s"]
 atlas = ExtResource("2_ywt6l")
 region = Rect2(0, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_opi8c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywt6l"]
 atlas = ExtResource("2_ywt6l")
 region = Rect2(32, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qqrlv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k8lm"]
 atlas = ExtResource("2_ywt6l")
 region = Rect2(64, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kulsc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yw2j"]
 atlas = ExtResource("2_ywt6l")
 region = Rect2(96, 160, 32, 32)
 
@@ -22,19 +24,19 @@ region = Rect2(96, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eu0ob")
+"texture": SubResource("AtlasTexture_pqf0s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_opi8c")
+"texture": SubResource("AtlasTexture_ywt6l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qqrlv")
+"texture": SubResource("AtlasTexture_8k8lm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kulsc")
+"texture": SubResource("AtlasTexture_6yw2j")
 }],
 "loop": 1,
-"name": &"Starch",
+"name": &"Molecule",
 "speed": 5.0
 }]
 
@@ -42,11 +44,15 @@ animations = [{
 radius = 21.095022
 
 [node name="Protein" type="RigidBody2D" unique_id=521101774 groups=["protein"]]
+script = ExtResource("2_pqf0s")
+component_scene = ExtResource("2_8k8lm")
+min_num = 2
+max_num = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_1vivr")
-animation = &"Starch"
+animation = &"Molecule"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
 shape = SubResource("CircleShape2D_1vivr")

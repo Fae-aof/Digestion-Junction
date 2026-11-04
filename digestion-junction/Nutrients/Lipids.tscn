@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b461gu5eapoic"]
+
+[ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_5o2p6"]
+[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_60rp4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o2p6"]
+atlas = ExtResource("1_60rp4")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkpyf"]
+atlas = ExtResource("1_60rp4")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5rfa"]
+atlas = ExtResource("1_60rp4")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g36so"]
+atlas = ExtResource("1_60rp4")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o2p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkpyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5rfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g36so")
+}],
+"loop": 1,
+"name": &"Molecule",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 15.132746
+
+[node name="Lipids" type="RigidBody2D" unique_id=521101774 groups=["lipids"]]
+script = ExtResource("1_5o2p6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
+scale = Vector2(1.505, 1.505)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"Molecule"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
+shape = SubResource("CircleShape2D_1vivr")

@@ -48,11 +48,11 @@ scale = Vector2(-0.065, 0.065)
 icon = ExtResource("2_pidr5")
 flat = true
 
+[node name="Solution" parent="." unique_id=1068114312 instance=ExtResource("3_d2d64")]
+position = Vector2(1065, 633)
+
 [node name="Container" parent="." unique_id=1660461192 instance=ExtResource("4_g6usb")]
 position = Vector2(1061, 509)
-
-[node name="Solution" parent="." unique_id=135502296 instance=ExtResource("3_d2d64")]
-position = Vector2(1071, 640)
 
 [node name="Fill up" type="Button" parent="." unique_id=783053967]
 offset_left = 35.0
@@ -109,6 +109,30 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "Fats"
 
+[node name="Amylase Toggle" type="Button" parent="." unique_id=953527950]
+offset_left = 231.0
+offset_top = 267.0
+offset_right = 437.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 31
+text = "Amylase"
+
+[node name="Protease Toggle" type="Button" parent="." unique_id=2084580816]
+offset_left = 116.0
+offset_top = 364.0
+offset_right = 322.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 31
+text = "Protease"
+
+[node name="Lipase Toggle" type="Button" parent="." unique_id=1378477559]
+offset_left = 371.0
+offset_top = 363.0
+offset_right = 577.0
+offset_bottom = 429.0
+theme_override_font_sizes/font_size = 31
+text = "Lipase"
+
 [connection signal="pressed" from="Increase pH" to="." method="_on_increase_p_h_pressed"]
 [connection signal="pressed" from="Decrease pH" to="." method="_on_decrease_p_h_pressed"]
 [connection signal="pressed" from="Fill up" to="." method="_on_fill_up_pressed"]
@@ -116,3 +140,6 @@ text = "Fats"
 [connection signal="pressed" from="Starch button" to="Spawner" method="_on_starch_button_pressed"]
 [connection signal="pressed" from="Protein button" to="Spawner" method="_on_protein_button_pressed"]
 [connection signal="pressed" from="Fats button" to="Spawner" method="_on_fats_button_pressed"]
+[connection signal="pressed" from="Amylase Toggle" to="." method="_on_amylase_toggle_pressed"]
+[connection signal="pressed" from="Protease Toggle" to="." method="_on_protease_toggle_pressed"]
+[connection signal="pressed" from="Lipase Toggle" to="." method="_on_lipase_toggle_pressed"]

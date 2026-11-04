@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://c0ygwenkoxpd2"]
 
-[ext_resource type="Script" uid="uid://brpp668jfp5wy" path="res://Solution Making/solution.gd" id="1_k2oew"]
+[ext_resource type="Texture2D" uid="uid://d08sn5fd15swx" path="res://Milestone 1 Sprites/untitled@4x (1).png" id="1_k2oew"]
+[ext_resource type="Script" uid="uid://brpp668jfp5wy" path="res://Solution Making/solution.gd" id="2_a8vvq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
-size = Vector2(239.031, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(255, 253)
 
-[node name="Solution" type="Area2D" unique_id=135502296]
-script = ExtResource("1_k2oew")
+[node name="Solution" type="Sprite2D" unique_id=1068114312]
+modulate = Color(1, 1, 1, 0.5137255)
+scale = Vector2(1, 0.05)
+texture = ExtResource("1_k2oew")
+script = ExtResource("2_a8vvq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1815900376]
-shape = SubResource("RectangleShape2D_8vrlf")
+[node name="Area2D" type="Area2D" parent="." unique_id=2002251178]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1444516645]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

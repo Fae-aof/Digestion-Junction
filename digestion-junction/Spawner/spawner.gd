@@ -17,22 +17,19 @@ func _ready() -> void:
 	x = bottom_right.position.x
 	y = bottom_right.position.y
 
-func spawn_nutrients():
+func spawn_nutrients(scene : PackedScene):
 	for i in limit:
-		var nutrient = nutrient_scene.instantiate()
+		var nutrient = scene.instantiate()
 		nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))
 		add_child(nutrient)
 		await get_tree().create_timer(0.1).timeout
 
 func _on_starch_button_pressed() -> void:
-	nutrient_scene = starch_scene
-	spawn_nutrients()
+	spawn_nutrients(starch_scene)
 
 
 func _on_protein_button_pressed() -> void:
-	nutrient_scene = proteins_scene
-	spawn_nutrients()
+	spawn_nutrients(proteins_scene)
 
 func _on_fats_button_pressed() -> void:
-	nutrient_scene = fats_scene
-	spawn_nutrients()
+	spawn_nutrients(fats_scene)

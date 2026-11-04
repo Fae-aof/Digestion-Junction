@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://txak2c1gprrg"]
 
-[ext_resource type="Script" uid="uid://bsvp8tqys64xs" path="res://Nutrients/maltose.gd" id="1_ndrgn"]
+[ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_ndrgn"]
 [ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="2_qypjy"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g6usb"]
-friction = 0.28
-bounce = 0.37
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndrgn"]
 atlas = ExtResource("2_qypjy")
@@ -26,34 +22,33 @@ region = Rect2(96, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ndrgn")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qypjy")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_r4uyc")
 }, {
-"duration": 0.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wmpi0")
 }],
 "loop": 1,
-"name": &"Maltose",
+"name": &"Molecule",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
-radius = 12.0415945
+radius = 15.132746
 
-[node name="Maltose" type="RigidBody2D" unique_id=521101774]
-physics_material_override = SubResource("PhysicsMaterial_g6usb")
+[node name="Maltose" type="RigidBody2D" unique_id=521101774 groups=["maltose"]]
 script = ExtResource("1_ndrgn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
-scale = Vector2(1.19, 1.19)
+scale = Vector2(1.505, 1.505)
 sprite_frames = SubResource("SpriteFrames_1vivr")
-animation = &"Maltose"
+animation = &"Molecule"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
 shape = SubResource("CircleShape2D_1vivr")

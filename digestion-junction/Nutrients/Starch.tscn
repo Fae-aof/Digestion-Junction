@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b5tw7q72jl324"]
 
 [ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_7uech"]
-[ext_resource type="Script" uid="uid://cxq5buqd31rdr" path="res://Nutrients/starch.gd" id="1_lqs2g"]
+[ext_resource type="PackedScene" uid="uid://txak2c1gprrg" path="res://Nutrients/Maltose.tscn" id="2_jfke8"]
+[ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="2_lqs2g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4yjv"]
 atlas = ExtResource("1_7uech")
@@ -35,7 +36,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5n5sb")
 }],
 "loop": 1,
-"name": &"Starch",
+"name": &"Molecule",
 "speed": 5.0
 }]
 
@@ -43,12 +44,15 @@ animations = [{
 radius = 21.095022
 
 [node name="Starch" type="RigidBody2D" unique_id=521101774 groups=["starch"]]
-script = ExtResource("1_lqs2g")
+script = ExtResource("2_lqs2g")
+component_scene = ExtResource("2_jfke8")
+min_num = 3
+max_num = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
 scale = Vector2(2.1, 2.1)
 sprite_frames = SubResource("SpriteFrames_1vivr")
-animation = &"Starch"
+animation = &"Molecule"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
 shape = SubResource("CircleShape2D_1vivr")

@@ -1,22 +1,39 @@
-extends Area2D
+extends Sprite2D
 
-@onready var liquid: CollisionShape2D = $CollisionShape2D
-	
+var components = []
+var enzyme_dict = {"amylase": "starch", "protease": "protein", "lipase": "fats"}
+var filled = false
+var moving = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func fill_up():
-	var rect_shape = liquid.shape as RectangleShape2D
-	var tween_p = create_tween()
-	tween_p.tween_property(liquid, "position", Vector2(0, -120), 0.5)
-	var tween_s = create_tween()
-	tween_s.tween_property(rect_shape, "size", Vector2(240, 260), 0.5)
+	if !filled and !moving:
+		moving = true
+		var tween_p = create_tween()
+		tween_p.tween_property(self, "position", position + Vector2(0, -115), 0.5)
+		var tween_s = create_tween()
+		tween_s.tween_property(self, "scale", Vector2(1, 1), 0.5)
+		await get_tree().create_timer(0.5).timeout
+		filled = true
+		moving = false
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("starch"):
-		body.break_into_maltose()
+
+func add_solution(solution: String):
+	components.append(enzyme_dict[solution])
 
 func empty():
-	var rect_shape = liquid.shape as RectangleShape2D
-	var tween_p = create_tween()
-	tween_p.tween_property(liquid, "position", Vector2(0, 0), 0.5)
-	var tween_s = create_tween()
-	tween_s.tween_property(rect_shape, "size", Vector2(240, 5), 0.5)
+	if filled and !moving:
+		moving = true
+		var tween_p = create_tween()
+		tween_p.tween_property(self, "position", position - Vector2(0, -115), 0.5)
+		var tween_s = create_tween()
+		tween_s.tween_property(self, "scale", Vector2(1, 0.05), 0.5)
+		await get_tree().create_timer(0.5).timeout
+		filled = false
+		moving = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	for i in components:
+		if body.is_in_group(i):
+			body.break_down()
