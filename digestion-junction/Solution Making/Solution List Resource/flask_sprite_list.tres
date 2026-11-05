@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="sprite_list" format=3 uid="uid://ccguvsuuw4vx"]
 
-[ext_resource type="Script" uid="uid://mkeyn1cfuan6" path="res://Solution Making/Solution List Resource/sprite_list_resource.gd" id="1_44lf1"]
-[ext_resource type="Texture2D" uid="uid://drpk17nam0lxs" path="res://Milestone 1 Sprites/red flask.png" id="2_n03om"]
-[ext_resource type="Texture2D" uid="uid://c5ce6v6ivt5qm" path="res://Milestone 1 Sprites/blue flask.png" id="3_5xjb0"]
-[ext_resource type="Texture2D" uid="uid://nci73bi47inx" path="res://Milestone 1 Sprites/yellow flask.png" id="4_23d1v"]
-[ext_resource type="Texture2D" uid="uid://gijwjhqvgcgr" path="res://Milestone 1 Sprites/green flask.png" id="5_lry5b"]
-[ext_resource type="Texture2D" uid="uid://cyowm448pm8sg" path="res://Milestone 1 Sprites/purple flask.png" id="6_c400h"]
+[ext_resource type="Script" uid="uid://mkeyn1cfuan6" path="res://Solution Making/Solution List Resource/sprite_list_resource.gd" id="1_w0y0l"]
+[ext_resource type="Texture2D" uid="uid://drpk17nam0lxs" path="res://Milestone 1 Sprites/red flask.png" id="2_4nq2r"]
+[ext_resource type="Texture2D" uid="uid://c5ce6v6ivt5qm" path="res://Milestone 1 Sprites/blue flask.png" id="3_y726c"]
+[ext_resource type="Texture2D" uid="uid://nci73bi47inx" path="res://Milestone 1 Sprites/yellow flask.png" id="4_4u26s"]
+[ext_resource type="Texture2D" uid="uid://gijwjhqvgcgr" path="res://Milestone 1 Sprites/green flask.png" id="5_c4vpu"]
+[ext_resource type="Texture2D" uid="uid://cyowm448pm8sg" path="res://Milestone 1 Sprites/purple flask.png" id="6_ye1yq"]
 
 [resource]
-script = ExtResource("1_44lf1")
-sprites = Array[Texture]([ExtResource("2_n03om"), ExtResource("3_5xjb0"), ExtResource("4_23d1v"), ExtResource("5_lry5b"), ExtResource("6_c400h")])
+script = ExtResource("1_w0y0l")
+sprites = Array[Texture]([ExtResource("2_4nq2r"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu"), ExtResource("6_ye1yq"), ExtResource("3_y726c")])
+colours = Array[String](["ff666653", "98ffff53", "ffff8253", "8aff8c53", "ff9dff53", "98ffff53"])
+numbers = Array[int]([0, 1, 2, 3, 4, 5])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

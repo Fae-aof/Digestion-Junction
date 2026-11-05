@@ -15,6 +15,10 @@ run/main_scene="uid://dt11t02dlt8ws"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://t7d7xye24l7u"
+
 [display]
 
 window/size/viewport_width=1280
@@ -34,6 +38,7 @@ polypeptide=""
 maltose=""
 lipids=""
 protein=""
+indicator=""
 
 [physics]
 
