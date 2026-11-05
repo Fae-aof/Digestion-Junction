@@ -1,8 +1,8 @@
 extends Sprite2D
 
 var components = []
-var enzyme_dict = {"amylase": "starch", "protease": "protein", "lipase": "fats"}
-var enzyme_color_dict = {"amylase": "ff9dff53", "protease": "98ffff53", "lipase": "ffff8253"}
+var enzyme_dict = {"amylase": "starch", "protease": "protein", "lipase": "fats", "water": ""}
+var enzyme_color_dict = {"amylase": "ff9dff53", "protease": "98ffff53", "lipase": "ffff8253", "water": "ffffff53"}
 var filled = false
 var moving = false
 
@@ -38,5 +38,5 @@ func empty():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	for i in components:
-		if body.is_in_group(i):
+		if i != "" and body.is_in_group(i):
 			body.break_down()
