@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ysmi4")
-names = Array[String](["amylase", "protease", "lipase", "water", "hydrochloric acid", "sodium hydrogen carbonate"])
+names = Array[String](["amylase", "protease", "lipase", "water", "hydrochloric acid", "sodium hydrogen carbonate", "mucin", "maltase"])
 metadata/_custom_type_script = "uid://cqg0uuq8dlirv"

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dimxi3m5j4egk" path="res://Solution Making/flask.tscn" id="5_g6usb"]
 [ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_jpax7"]
 [ext_resource type="Script" uid="uid://ce82we7ramni1" path="res://Solution Making/universal_indicator.gd" id="7_8wuea"]
+[ext_resource type="Gradient" uid="uid://dyd8mll2054le" path="res://Solution Making/pH Gradient.tres" id="8_hxh3l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(0.7313315, 0.7313315, 0.7313314, 1)
@@ -134,17 +135,17 @@ offset_right = 317.0
 offset_bottom = 41.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Flask4" parent="Flasks" unique_id=1665956862 instance=ExtResource("5_g6usb")]
+[node name="Flask4" parent="Flasks" unique_id=699481816 instance=ExtResource("5_g6usb")]
+offset_left = 446.0
+offset_top = 41.0
+offset_right = 446.0
+offset_bottom = 41.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask5" parent="Flasks" unique_id=1665956862 instance=ExtResource("5_g6usb")]
 offset_left = 53.0
 offset_top = 253.0
 offset_right = 53.0
-offset_bottom = 253.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Flask5" parent="Flasks" unique_id=1563263751 instance=ExtResource("5_g6usb")]
-offset_left = 320.0
-offset_top = 253.0
-offset_right = 320.0
 offset_bottom = 253.0
 metadata/_edit_use_anchors_ = true
 
@@ -155,9 +156,24 @@ offset_right = 187.0
 offset_bottom = 253.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Flask7" parent="Flasks" unique_id=1563263751 instance=ExtResource("5_g6usb")]
+offset_left = 320.0
+offset_top = 253.0
+offset_right = 320.0
+offset_bottom = 253.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask8" parent="Flasks" unique_id=470724167 instance=ExtResource("5_g6usb")]
+offset_left = 449.0
+offset_top = 253.0
+offset_right = 449.0
+offset_bottom = 253.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Universal Indicator" type="Area2D" parent="." unique_id=2016146752]
 position = Vector2(1117, 211)
 script = ExtResource("7_8wuea")
+pH_gradient = ExtResource("8_hxh3l")
 
 [node name="ColorRect" type="ColorRect" parent="Universal Indicator" unique_id=1051076158]
 offset_right = 47.0

@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_w0y0l")
-sprites = Array[Texture]([ExtResource("2_4nq2r"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu"), ExtResource("6_ye1yq"), ExtResource("3_y726c")])
-colours = Array[String](["ff666653", "98ffff53", "ffff8253", "8aff8c53", "ff9dff53", "98ffff53"])
-numbers = Array[int]([0, 1, 2, 3, 4, 5])
+sprites = Array[Texture]([ExtResource("2_4nq2r"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu"), ExtResource("6_ye1yq"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu")])
+colours = Array[String](["ff666653", "98ffff53", "ffff8253", "8aff8c53", "ff9dff53", "98ffff53", "ffff8253", "8aff8c53"])
+numbers = Array[int]([0, 1, 2, 3, 4, 5, 6, 7])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

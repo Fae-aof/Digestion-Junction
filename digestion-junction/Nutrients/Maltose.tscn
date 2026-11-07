@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_ndrgn"]
 [ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="2_qypjy"]
+[ext_resource type="PackedScene" uid="uid://crctpd1e2pt3t" path="res://Nutrients/Glucose.tscn" id="2_r4uyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndrgn"]
 atlas = ExtResource("2_qypjy")
@@ -44,6 +45,9 @@ radius = 9.0
 
 [node name="Maltose" type="RigidBody2D" unique_id=521101774 groups=["maltose"]]
 script = ExtResource("1_ndrgn")
+component_scene = ExtResource("2_r4uyc")
+min_num = 2
+max_num = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
 scale = Vector2(0.9, 0.9)

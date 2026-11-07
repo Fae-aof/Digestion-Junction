@@ -1,14 +1,17 @@
 extends Sprite2D
 
-var components = []
-var enzyme_dict = {"amylase": "starch", "protease": "protein", "lipase": "fats", "water": null, "hydrochloric acid": 2, "sodium hydrogen carbonate": 8}
+var component
+var enzyme_dict = {"amylase": "starch", "protease": "protein",
+					"lipase": "fats", "maltase" : "maltose", "mucin" : null,
+					"water": null, "hydrochloric acid": null, 
+					"sodium hydrogen carbonate": null}
 var filled = false
 var moving = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func fill_up(solution: String, colour : String):
 	if !filled and !moving:
-		components.append(enzyme_dict[solution])
+		component = enzyme_dict[solution]
 		modulate = colour
 		moving = true
 		var tween_p = create_tween()
@@ -18,10 +21,6 @@ func fill_up(solution: String, colour : String):
 		await get_tree().create_timer(0.5).timeout
 		filled = true
 		moving = false
-
-
-func add_solution(solution: String):
-	components.append(enzyme_dict[solution])
 
 func empty():
 	if filled and !moving:
@@ -36,10 +35,10 @@ func empty():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	for i in components:
-		if i == null:
-			pass
-		elif typeof(i) == TYPE_INT:
-			pass
-		elif body.is_in_group(i):
+	if component == null:
+		pass
+	elif component == "protein":
+		if body.is_in_group("protein") or body.is_in_group("polypeptide"):
 			body.break_down()
+	elif body.is_in_group(component):
+		body.break_down()

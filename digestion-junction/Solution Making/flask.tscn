@@ -17,6 +17,7 @@ border_color = Color(0.09009846, 0.09009851, 0.09009839, 1)
 [node name="Flask" type="Control" unique_id=1076343659]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(0.8657316, 0.8657316)
 script = ExtResource("1_xwkdq")
 
 [node name="Button" type="Button" parent="." unique_id=1036176505]

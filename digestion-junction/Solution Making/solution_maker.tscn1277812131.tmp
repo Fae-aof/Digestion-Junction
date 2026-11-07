@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dt11t02dlt8ws"]
+
+[ext_resource type="Script" uid="uid://bkhst1y0o17i8" path="res://Solution Making/solution_maker.gd" id="1_l5vax"]
+[ext_resource type="Resource" uid="uid://cohqmvoosqqoj" path="res://Solution Making/Solution List Resource/solution_list.tres" id="2_8wuea"]
+[ext_resource type="Resource" uid="uid://ccguvsuuw4vx" path="res://Solution Making/Solution List Resource/flask_sprite_list.tres" id="3_hxh3l"]
+[ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="4_g6usb"]
+[ext_resource type="PackedScene" uid="uid://dimxi3m5j4egk" path="res://Solution Making/flask.tscn" id="5_g6usb"]
+[ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_jpax7"]
+[ext_resource type="Script" uid="uid://ce82we7ramni1" path="res://Solution Making/universal_indicator.gd" id="7_8wuea"]
+[ext_resource type="Gradient" uid="uid://dyd8mll2054le" path="res://Solution Making/pH Gradient.tres" id="8_hxh3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.7313315, 0.7313315, 0.7313314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2d64"]
+bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(47, 178)
+
+[node name="Solution Maker" type="CanvasLayer" unique_id=447134398 groups=["indicator"]]
+script = ExtResource("1_l5vax")
+solutions_list = ExtResource("2_8wuea")
+sprites_list = ExtResource("3_hxh3l")
+
+[node name="Panel" type="Panel" parent="." unique_id=936418971]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="Solution Marker" type="Marker2D" parent="." unique_id=579162519]
+position = Vector2(1065, 687)
+
+[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("4_g6usb")]
+position = Vector2(1061, 566)
+
+[node name="Drain" type="Button" parent="." unique_id=783053967]
+offset_left = 35.0
+offset_top = 618.0
+offset_right = 345.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Drain"
+
+[node name="Reset" type="Button" parent="." unique_id=268417150]
+offset_left = 404.0
+offset_top = 618.0
+offset_right = 714.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Reset"
+
+[node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_jpax7")]
+position = Vector2(1056, 309)
+
+[node name="Starch button" type="Button" parent="." unique_id=1074081082]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -421.0
+offset_top = 26.0
+offset_right = -257.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Starch"
+
+[node name="Protein button" type="Button" parent="." unique_id=2125614504]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_top = 26.0
+offset_right = -53.0
+offset_bottom = 93.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Protein"
+
+[node name="Fats button" type="Button" parent="." unique_id=477598013]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -319.0
+offset_top = 119.0
+offset_right = -155.0
+offset_bottom = 186.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Fats"
+
+[node name="pH button" type="Button" parent="." unique_id=1555454218]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -858.0
+offset_top = 527.0
+offset_right = -590.0
+offset_bottom = 594.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+text = "Universal Indicator
+"
+
+[node name="Flasks" type="Node2D" parent="." unique_id=840044277]
+
+[node name="Flask" parent="Flasks" unique_id=1076343659 instance=ExtResource("5_g6usb")]
+offset_left = 49.0
+offset_top = 40.0
+offset_right = 49.0
+offset_bottom = 40.0
+solution = "amylase"
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask2" parent="Flasks" unique_id=1929360734 instance=ExtResource("5_g6usb")]
+offset_left = 182.0
+offset_top = 41.0
+offset_right = 182.0
+offset_bottom = 41.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask3" parent="Flasks" unique_id=1533397250 instance=ExtResource("5_g6usb")]
+offset_left = 317.0
+offset_top = 41.0
+offset_right = 317.0
+offset_bottom = 41.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask4" parent="Flasks" unique_id=1665956862 instance=ExtResource("5_g6usb")]
+offset_left = 53.0
+offset_top = 253.0
+offset_right = 53.0
+offset_bottom = 253.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask5" parent="Flasks" unique_id=1563263751 instance=ExtResource("5_g6usb")]
+offset_left = 320.0
+offset_top = 253.0
+offset_right = 320.0
+offset_bottom = 253.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Flask6" parent="Flasks" unique_id=1954764835 instance=ExtResource("5_g6usb")]
+offset_left = 187.0
+offset_top = 253.0
+offset_right = 187.0
+offset_bottom = 253.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Universal Indicator" type="Area2D" parent="." unique_id=2016146752]
+position = Vector2(1117, 211)
+script = ExtResource("7_8wuea")
+pH_gradient = ExtResource("8_hxh3l")
+
+[node name="ColorRect" type="ColorRect" parent="Universal Indicator" unique_id=1051076158]
+offset_right = 47.0
+offset_bottom = 178.0
+color = Color(1, 0.90418726, 0.47422165, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Indicator" unique_id=140059291]
+visible = false
+position = Vector2(24, 89)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[connection signal="pressed" from="Drain" to="." method="_on_drain_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Starch button" to="Spawner" method="_on_starch_button_pressed"]
+[connection signal="pressed" from="Protein button" to="Spawner" method="_on_protein_button_pressed"]
+[connection signal="pressed" from="Fats button" to="Spawner" method="_on_fats_button_pressed"]
+[connection signal="pressed" from="pH button" to="." method="_on_p_h_button_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_cnj4d"]
 [ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_jl02w"]
+[ext_resource type="PackedScene" uid="uid://dva1lexg4tlyo" path="res://Nutrients/Amino Acid.tscn" id="2_k4a6w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jl02w"]
 atlas = ExtResource("1_cnj4d")
@@ -44,6 +45,9 @@ radius = 8.0
 
 [node name="Polypeptide" type="RigidBody2D" unique_id=521101774 groups=["polypeptide"]]
 script = ExtResource("1_jl02w")
+component_scene = ExtResource("2_k4a6w")
+min_num = 3
+max_num = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
 scale = Vector2(0.8, 0.8)
