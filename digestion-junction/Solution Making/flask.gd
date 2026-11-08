@@ -2,6 +2,7 @@ extends Control
 
 @onready var button: Button = $Button
 @onready var flask_label: TextEdit = $Flask_Label
+@onready var checkmark: Sprite2D = $Check
 
 @onready var correct_stylebox = preload("res://Styleboxes/Text Input Correct.tres")
 
@@ -24,3 +25,4 @@ func check():
 		correct = true
 		flask_label.add_theme_stylebox_override("normal", correct_stylebox)
 		flask_label.editable = false
+		checkmark.show()

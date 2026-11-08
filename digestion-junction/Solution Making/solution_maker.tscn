@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://dt11t02dlt8ws"]
 
 [ext_resource type="Script" uid="uid://bkhst1y0o17i8" path="res://Solution Making/solution_maker.gd" id="1_l5vax"]
+[ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/lato/Lato-Bold.ttf" id="3_8wuea"]
+[ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="4_8wuea"]
 [ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="4_g6usb"]
 [ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_jpax7"]
 [ext_resource type="Script" uid="uid://ce82we7ramni1" path="res://Solution Making/universal_indicator.gd" id="7_8wuea"]
 [ext_resource type="Gradient" uid="uid://dyd8mll2054le" path="res://Solution Making/pH Gradient.tres" id="8_hxh3l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
-bg_color = Color(0.8672607, 0.8672607, 0.86726046, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2d64"]
-bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
+bg_color = Color(1, 0.8980392, 0.75686276, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
 size = Vector2(47, 178)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2d64"]
+bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
 
 [node name="Solution Maker" type="CanvasLayer" unique_id=447134398 groups=["indicator"]]
 script = ExtResource("1_l5vax")
@@ -27,27 +29,28 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
 
 [node name="Solution Marker" type="Marker2D" parent="." unique_id=579162519]
-position = Vector2(1065, 687)
-
-[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("4_g6usb")]
-position = Vector2(1061, 566)
+position = Vector2(1065, 692)
 
 [node name="Drain" type="Button" parent="." unique_id=783053967]
-offset_left = 35.0
-offset_top = 618.0
-offset_right = 345.0
-offset_bottom = 695.0
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+offset_left = 36.0
+offset_top = 623.0
+offset_right = 276.0
+offset_bottom = 703.0
+theme_override_colors/font_color = Color(0.23685831, 0.10008205, 0.008791575, 1)
+theme_override_fonts/font = ExtResource("3_8wuea")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Drain"
 
 [node name="Reset" type="Button" parent="." unique_id=268417150]
-offset_left = 370.0
-offset_top = 618.0
-offset_right = 680.0
-offset_bottom = 695.0
-theme_override_font_sizes/font_size = 42
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+offset_left = 309.0
+offset_top = 624.0
+offset_right = 549.0
+offset_bottom = 704.0
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("3_8wuea")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Reset"
 
 [node name="Universal Indicator" type="Area2D" parent="." unique_id=2016146752]
@@ -56,14 +59,32 @@ script = ExtResource("7_8wuea")
 pH_gradient = ExtResource("8_hxh3l")
 
 [node name="ColorRect" type="ColorRect" parent="Universal Indicator" unique_id=1051076158]
-offset_right = 47.0
-offset_bottom = 178.0
-color = Color(1, 0.90418726, 0.47422165, 1)
+offset_left = -5.0
+offset_top = -54.0
+offset_right = 42.0
+offset_bottom = 124.0
+color = Color(0.9411765, 0.6627451, 0.33333334, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Universal Indicator" unique_id=140059291]
 visible = false
 position = Vector2(24, 89)
 shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="pH button" type="Button" parent="." unique_id=1555454218]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 153.0
+offset_right = -119.0
+offset_bottom = 336.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+flat = true
+
+[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("4_g6usb")]
+position = Vector2(1063, 554)
 
 [node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_jpax7")]
 position = Vector2(1056, 309)
@@ -77,8 +98,9 @@ offset_top = 26.0
 offset_right = -257.0
 offset_bottom = 93.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Starch"
 
 [node name="Protein button" type="Button" parent="." unique_id=2125614504]
@@ -90,48 +112,38 @@ offset_top = 26.0
 offset_right = -53.0
 offset_bottom = 93.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Protein"
 
 [node name="Fats button" type="Button" parent="." unique_id=477598013]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -319.0
-offset_top = 119.0
-offset_right = -155.0
-offset_bottom = 186.0
+offset_left = -417.0
+offset_top = 117.0
+offset_right = -253.0
+offset_bottom = 184.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Fats"
-
-[node name="pH button" type="Button" parent="." unique_id=1555454218]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1218.0
-offset_top = 537.0
-offset_right = -959.0
-offset_bottom = 604.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
-text = "Universal Indicator
-"
 
 [node name="Check" type="Button" parent="." unique_id=1910668217]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -885.0
-offset_top = 537.0
-offset_right = -626.0
-offset_bottom = 604.0
+offset_left = -689.0
+offset_top = 624.0
+offset_right = -449.0
+offset_bottom = 704.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2d64")
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("3_8wuea")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Check"
 
 [node name="Next Level" type="Button" parent="." unique_id=739469835]
@@ -160,9 +172,9 @@ columns = 4
 
 [connection signal="pressed" from="Drain" to="." method="_on_drain_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="pH button" to="." method="_on_p_h_button_pressed"]
 [connection signal="pressed" from="Starch button" to="Spawner" method="_on_starch_button_pressed"]
 [connection signal="pressed" from="Protein button" to="Spawner" method="_on_protein_button_pressed"]
 [connection signal="pressed" from="Fats button" to="Spawner" method="_on_fats_button_pressed"]
-[connection signal="pressed" from="pH button" to="." method="_on_p_h_button_pressed"]
 [connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
 [connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]

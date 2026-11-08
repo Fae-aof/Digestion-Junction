@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="sprite_list" format=3 uid="uid://gre5q4j4wyqe"]
 
 [ext_resource type="Script" uid="uid://mkeyn1cfuan6" path="res://Solution Making/Solution List Resource/sprite_list_resource.gd" id="1_20rw6"]
-[ext_resource type="Texture2D" uid="uid://drpk17nam0lxs" path="res://Milestone 1 Sprites/red flask.png" id="2_vo8p3"]
-[ext_resource type="Texture2D" uid="uid://c5ce6v6ivt5qm" path="res://Milestone 1 Sprites/blue flask.png" id="3_hkr7p"]
-[ext_resource type="Texture2D" uid="uid://nci73bi47inx" path="res://Milestone 1 Sprites/yellow flask.png" id="4_ercja"]
+[ext_resource type="Texture2D" uid="uid://dx7ucfg5yfjw8" path="res://Sprites/red flask.png" id="2_20rw6"]
+[ext_resource type="Texture2D" uid="uid://cgf1a58kok4rl" path="res://Sprites/blue flask.png" id="3_vo8p3"]
+[ext_resource type="Texture2D" uid="uid://dvv5bsy2dgg4x" path="res://Sprites/yellow flask.png" id="4_hkr7p"]
 
 [resource]
 script = ExtResource("1_20rw6")
-sprites = Array[Texture]([ExtResource("2_vo8p3"), ExtResource("3_hkr7p"), ExtResource("4_ercja")])
+sprites = Array[Texture]([ExtResource("2_20rw6"), ExtResource("3_vo8p3"), ExtResource("4_hkr7p")])
 colours = Array[String](["ff666653", "98ffff70", "ffff8253"])
 numbers = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

@@ -4,19 +4,29 @@ extends Area2D
 
 @onready var color_rect: ColorRect = $ColorRect
 
+var moving = false
+
 func move_down(pH : int):
-	var original_position = global_position
-	var target_position = global_position + Vector2(0, 150)
-	var gradient_value : float = float(pH)/14
-	var target_colour = pH_gradient.sample(gradient_value)
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, 0.5)
-	tween.tween_property(color_rect, "color", target_colour, 0.2)
-	tween.tween_property(self, "global_position", original_position, 0.5)
-	
+	if !moving:
+		moving = true
+		var original_position = global_position
+		var target_position = global_position + Vector2(0, 150)
+		var gradient_value : float = float(pH)/14
+		var target_colour = pH_gradient.sample(gradient_value)
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", target_position, 0.5)
+		tween.tween_property(color_rect, "color", target_colour, 0.2)
+		tween.tween_property(self, "global_position", original_position, 0.5)
+		await get_tree().create_timer(1).timeout
+		moving = false
+		
 func move():
-	var original_position = global_position
-	var target_position = global_position + Vector2(0, 150)
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", target_position, 0.5)
-	tween.tween_property(self, "global_position", original_position, 0.5)
+	if !moving:
+		moving = true
+		var original_position = global_position
+		var target_position = global_position + Vector2(0, 150)
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", target_position, 0.5)
+		tween.tween_property(self, "global_position", original_position, 0.5)
+		await get_tree().create_timer(1).timeout
+		moving = false

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bkcfulmrtllt3"]
 
-[ext_resource type="Texture2D" uid="uid://cskwc38twhk2s" path="res://Milestone 1 Sprites/Container.png" id="1_652q0"]
+[ext_resource type="Texture2D" uid="uid://cwyl2hykjbuw3" path="res://Sprites/beaker.png" id="1_652q0"]
 
 [node name="Container" type="Node2D" unique_id=1660461192]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1140100629]
 position = Vector2(0, -21.74999)
-scale = Vector2(1.3164063, 1.486328)
+scale = Vector2(0.66, 0.66)
 texture = ExtResource("1_652q0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1005689041]
@@ -14,4 +14,4 @@ texture = ExtResource("1_652q0")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1092906411]
 position = Vector2(0, -21.28241)
 scale = Vector2(1.3164063, 1.443042)
-polygon = PackedVector2Array(110, -92.2, 88, -89.8, 87.35904, 84.73932, -80.52225, 84.73932, -84, -89.8, -106, -92.2, -106, 108, 109, 106, 112, 106, 110, -89)
+polygon = PackedVector2Array(108.629074, -110.681175, 97.23441, -116.918, 94.95548, 108.30065, -85.08011, 107.60767, -88.878334, -115.53204, -105.59049, -107.90925, -95.715126, -96.82156, -91.157265, 105.52873, -85.08011, 113.8445, 99.51334, 114.537476, 101.792274, 108.30065, 101.792274, -91.27772)
