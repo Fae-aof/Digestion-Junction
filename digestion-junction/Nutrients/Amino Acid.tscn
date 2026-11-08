@@ -1,37 +1,12 @@
 [gd_scene format=3 uid="uid://dva1lexg4tlyo"]
 
-[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_5ul1t"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ul1t"]
-atlas = ExtResource("1_5ul1t")
-region = Rect2(0, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahgc5"]
-atlas = ExtResource("1_5ul1t")
-region = Rect2(32, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkigt"]
-atlas = ExtResource("1_5ul1t")
-region = Rect2(64, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5vguo"]
-atlas = ExtResource("1_5ul1t")
-region = Rect2(96, 192, 32, 32)
+[ext_resource type="Texture2D" uid="uid://uby4nkvhi70a" path="res://Sprites/Molecules/mol_amino acid.png" id="1_5ul1t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ul1t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ahgc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fkigt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5vguo")
+"texture": ExtResource("1_5ul1t")
 }],
 "loop": 1,
 "name": &"Molecule",
@@ -44,7 +19,7 @@ radius = 6.0827627
 [node name="Amino Acid" type="RigidBody2D" unique_id=521101774]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
-scale = Vector2(0.605, 0.605)
+scale = Vector2(0.145, 0.145)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"Molecule"
 

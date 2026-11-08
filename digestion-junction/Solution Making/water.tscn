@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bg4dsar057o4w"]
+
+[ext_resource type="Script" uid="uid://coc2vifpv17j8" path="res://Solution Making/water.gd" id="1_xk4vl"]
+[ext_resource type="Texture2D" uid="uid://rdtyvlh05msu" path="res://Sprites/water.png" id="2_6fiyc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwkdq"]
+bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
+
+[node name="Flask" type="Control" unique_id=1076343659]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.8657316, 0.8657316)
+script = ExtResource("1_xk4vl")
+
+[node name="Button" type="Button" parent="." unique_id=1036176505]
+layout_mode = 1
+offset_right = 188.0
+offset_bottom = 256.0
+scale = Vector2(0.595, 0.595)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwkdq")
+icon = ExtResource("2_6fiyc")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

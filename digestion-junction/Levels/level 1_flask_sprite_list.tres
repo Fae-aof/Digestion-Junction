@@ -8,6 +8,6 @@
 [resource]
 script = ExtResource("1_20rw6")
 sprites = Array[Texture]([ExtResource("2_20rw6"), ExtResource("3_vo8p3"), ExtResource("4_hkr7p")])
-colours = Array[String](["ff666653", "98ffff70", "ffff8253"])
+colours = Array[String](["ff666680", "1d77cb80", "fff32e80"])
 numbers = Array[int]([0, 1, 2])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

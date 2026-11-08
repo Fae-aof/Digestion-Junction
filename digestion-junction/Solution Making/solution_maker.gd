@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var solution_marker: Marker2D = $"Solution Marker"
 @onready var flask_parent: GridContainer = $Flasks
 @onready var universal_indicator: Area2D = $"Universal Indicator"
+@onready var pH_button: Button = $"pH button"
 @onready var next_level: Button = $"Next Level"
 
 @onready var amylase_toggle: Button = $"Amylase Toggle"
@@ -19,6 +20,7 @@ extends CanvasLayer
 @export var flask_count : int
 
 @export var cheats = false
+@export var disable_pH = false
 
 var flasks
 var components =  []
@@ -28,6 +30,9 @@ var pH_solutions_dict = {"hydrochloric acid": 2, "sodium hydrogen carbonate": 8,
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if disable_pH:
+		universal_indicator.hide()
+		pH_button.hide()
 	for i in flask_count:
 		var new_flask = flask_scene.instantiate()
 		flask_parent.add_child(new_flask)
@@ -107,3 +112,15 @@ func _on_check_pressed() -> void:
 
 func _on_next_level_pressed() -> void:
 	get_tree().change_scene_to_file(level_scene)
+
+
+func _on_water_pressed() -> void:
+	add_solution("water", "7cb8fb48")
+	components.append("water")
+	if components.has("water") and components.has("mucin"):
+		var all_molecules = spawner.get_children()
+		spawner.mucus_added = true
+		for i in all_molecules:
+			i.soft = true
+	change_pH(7)
+	

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c12vrsmq8fspc"]
+[gd_scene format=3 uid="uid://c7sf3w0xoi4gs"]
 
 [ext_resource type="Script" uid="uid://bjisu75wdshmt" path="res://Levels/level.gd" id="1_oalwn"]
 [ext_resource type="PackedScene" uid="uid://dt11t02dlt8ws" path="res://Solution Making/solution_maker.tscn" id="1_p48sa"]
@@ -21,9 +21,12 @@ protease breaks down protein
 lipase breaks down fats"])
 
 [node name="Solution Maker" parent="." unique_id=447134398 instance=ExtResource("1_p48sa")]
+level_scene = "res://Levels/level 2.tscn"
 solutions_list = ExtResource("2_a63mx")
 sprites_list = ExtResource("3_540j4")
 flask_count = 3
+cheats = true
+disable_pH = true
 
 [node name="Guide" type="Panel" parent="." unique_id=1112067197]
 offset_left = 104.0

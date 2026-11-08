@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Digestion Junction"
-run/main_scene="uid://c12vrsmq8fspc"
+run/main_scene="uid://c7sf3w0xoi4gs"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

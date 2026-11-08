@@ -15,9 +15,9 @@ func fill_up(solution: String, colour : String):
 		modulate = colour
 		moving = true
 		var tween_p = create_tween()
-		tween_p.tween_property(self, "position", position + Vector2(0, -135), 0.5)
+		tween_p.tween_property(self, "position", position + Vector2(0, -130), 0.5)
 		var tween_s = create_tween()
-		tween_s.tween_property(self, "scale", Vector2(1, 0.97), 0.5)
+		tween_s.tween_property(self, "scale", Vector2(1.02, 1.1), 0.5)
 		await get_tree().create_timer(0.5).timeout
 		filled = true
 		moving = false
@@ -26,12 +26,13 @@ func empty():
 	if filled and !moving:
 		moving = true
 		var tween_p = create_tween()
-		tween_p.tween_property(self, "position", position - Vector2(0, -135), 0.5)
+		tween_p.tween_property(self, "position", position - Vector2(0, -130), 0.5)
 		var tween_s = create_tween()
-		tween_s.tween_property(self, "scale", Vector2(1, 0.05), 0.5)
+		tween_s.tween_property(self, "scale", Vector2(1.02, 0.05), 0.5)
 		await get_tree().create_timer(0.5).timeout
 		filled = false
 		moving = false
+		queue_free()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

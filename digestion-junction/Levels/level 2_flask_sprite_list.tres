@@ -10,6 +10,6 @@
 [resource]
 script = ExtResource("1_lu1iq")
 sprites = Array[Texture]([ExtResource("2_lu1iq"), ExtResource("3_enxrs"), ExtResource("4_0nqfl"), ExtResource("5_08eru"), ExtResource("6_srsna")])
-colours = Array[String](["ff666653", "98ffff70", "ffff8253", "8aff8c53", "ff9dff53"])
+colours = Array[String](["ff666680", "1d77cb80", "fff32e80", "2cb72f80", "ac65fc80"])
 numbers = Array[int]([0, 1, 2, 3, 4])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

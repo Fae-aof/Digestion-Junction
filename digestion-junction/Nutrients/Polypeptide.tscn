@@ -1,39 +1,14 @@
 [gd_scene format=3 uid="uid://dmerwsw4q4jwf"]
 
-[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_cnj4d"]
 [ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_jl02w"]
 [ext_resource type="PackedScene" uid="uid://dva1lexg4tlyo" path="res://Nutrients/Amino Acid.tscn" id="2_k4a6w"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jl02w"]
-atlas = ExtResource("1_cnj4d")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4a6w"]
-atlas = ExtResource("1_cnj4d")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2v2q"]
-atlas = ExtResource("1_cnj4d")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ugobf"]
-atlas = ExtResource("1_cnj4d")
-region = Rect2(96, 96, 32, 32)
+[ext_resource type="Texture2D" uid="uid://cu041pmut40ej" path="res://Sprites/Molecules/mol_polypeptide.png" id="3_k4a6w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jl02w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4a6w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2v2q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ugobf")
+"texture": ExtResource("3_k4a6w")
 }],
 "loop": 1,
 "name": &"Molecule",
@@ -50,7 +25,7 @@ min_num = 3
 max_num = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.195, 0.195)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"Molecule"
 

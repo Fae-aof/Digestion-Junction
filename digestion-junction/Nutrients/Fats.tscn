@@ -1,39 +1,14 @@
 [gd_scene format=3 uid="uid://cn8ju2mvij2b"]
 
 [ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_rlhlp"]
-[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="2_w0smy"]
+[ext_resource type="Texture2D" uid="uid://si4u1sqiytdw" path="res://Sprites/Molecules/mol_fats.png" id="3_eu0ob"]
 [ext_resource type="PackedScene" uid="uid://b461gu5eapoic" path="res://Nutrients/Lipids.tscn" id="3_w0smy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlhlp"]
-atlas = ExtResource("2_w0smy")
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w0smy"]
-atlas = ExtResource("2_w0smy")
-region = Rect2(32, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eu0ob"]
-atlas = ExtResource("2_w0smy")
-region = Rect2(64, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_opi8c"]
-atlas = ExtResource("2_w0smy")
-region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rlhlp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w0smy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eu0ob")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_opi8c")
+"texture": ExtResource("3_eu0ob")
 }],
 "loop": 1,
 "name": &"Molecule",
@@ -50,7 +25,7 @@ min_num = 3
 max_num = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
-scale = Vector2(1.9, 1.9)
+scale = Vector2(0.48, 0.48)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"Molecule"
 
