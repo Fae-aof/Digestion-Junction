@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="solution_list" format=3 uid="uid://cohqmvoosqqoj"]
+[gd_resource type="Resource" script_class="solution_list" format=3 uid="uid://b76eq2sc3kqy6"]
 
-[ext_resource type="Script" uid="uid://cqg0uuq8dlirv" path="res://Solution Making/Solution List Resource/solution_list_resource.gd" id="1_ysmi4"]
+[ext_resource type="Script" uid="uid://cqg0uuq8dlirv" path="res://Solution Making/Solution List Resource/solution_list_resource.gd" id="1_4aktt"]
 
 [resource]
-script = ExtResource("1_ysmi4")
+script = ExtResource("1_4aktt")
 names = Array[String](["amylase", "protease", "lipase", "water", "hydrochloric acid", "sodium hydrogen carbonate", "mucin", "maltase"])
 metadata/_custom_type_script = "uid://cqg0uuq8dlirv"

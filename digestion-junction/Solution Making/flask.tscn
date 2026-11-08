@@ -2,17 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cyowm448pm8sg" path="res://Milestone 1 Sprites/purple flask.png" id="1_6lpsm"]
 [ext_resource type="Script" uid="uid://diuhexep1v0y0" path="res://Solution Making/flask.gd" id="1_xwkdq"]
+[ext_resource type="StyleBox" uid="uid://cab7kik7st1l2" path="res://Styleboxes/Text Input White.tres" id="3_afk7r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwkdq"]
 bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afk7r"]
-bg_color = Color(0.9401983, 0.9401984, 0.9401983, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.09009846, 0.09009851, 0.09009839, 1)
 
 [node name="Flask" type="Control" unique_id=1076343659]
 layout_mode = 3
@@ -43,6 +36,6 @@ scale = Vector2(0.7882905, 0.7882905)
 theme_override_colors/search_result_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_afk7r")
+theme_override_styles/normal = ExtResource("3_afk7r")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

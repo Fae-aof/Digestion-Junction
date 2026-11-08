@@ -3,18 +3,23 @@ extends CanvasLayer
 @onready var solution = preload("res://Solution Making/solution.tscn")
 @onready var spawner: Node2D = $Spawner
 @onready var solution_marker: Marker2D = $"Solution Marker"
-@onready var flask_parent: Node2D = $Flasks
+@onready var flask_parent: GridContainer = $Flasks
 @onready var universal_indicator: Area2D = $"Universal Indicator"
+@onready var next_level: Button = $"Next Level"
 
 @onready var amylase_toggle: Button = $"Amylase Toggle"
 @onready var protease_toggle: Button = $"Protease Toggle"
 @onready var lipase_toggle: Button = $"Lipase Toggle"
 
-@onready var enzyme_toggles = [amylase_toggle, protease_toggle, lipase_toggle]
+@onready var flask_scene = preload("res://Solution Making/flask.tscn")
 
+@export var level_scene : String
 @export var solutions_list: solution_list
 @export var sprites_list: sprite_list
-	
+@export var flask_count : int
+
+@export var cheats = false
+
 var flasks
 var components =  []
 
@@ -23,6 +28,9 @@ var pH_solutions_dict = {"hydrochloric acid": 2, "sodium hydrogen carbonate": 8,
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for i in flask_count:
+		var new_flask = flask_scene.instantiate()
+		flask_parent.add_child(new_flask)
 	solutions_list.names.shuffle()
 	sprites_list.numbers.shuffle()
 	flasks = flask_parent.get_children()
@@ -35,7 +43,8 @@ func _ready() -> void:
 		flask_sprite.icon = sprites_list.sprites[random_count]
 		i.colour = sprites_list.colours[random_count]
 		var flask_label = i.get_node("Flask_Label")
-		flask_label.text = solutions_list.names[count]
+		if cheats:
+			flask_label.text = solutions_list.names[count]
 		count += 1
 		
 
@@ -86,4 +95,15 @@ func _on_p_h_button_pressed() -> void:
 	else:
 		universal_indicator.move()
 	
-	
+
+func _on_check_pressed() -> void:
+	var all_check = []
+	for i in flasks:
+		i.check()
+		all_check.append(i.correct)
+	if !all_check.has(false):
+		next_level.show()
+
+
+func _on_next_level_pressed() -> void:
+	get_tree().change_scene_to_file(level_scene)

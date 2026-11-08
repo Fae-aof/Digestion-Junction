@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://pq51ax110xmx"]
+
+[ext_resource type="Script" uid="uid://cukffem8khd5d" path="res://Levels/opening.gd" id="1_ax0uj"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="1_d3l0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.14419526, 0.33424097, 0.41558394, 1)
+
+[node name="Opening" type="CanvasLayer" unique_id=333958358]
+script = ExtResource("1_ax0uj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1629148628]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1083610118]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_top = 70.0
+offset_right = 2.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_d3l0r")
+theme_override_font_sizes/font_size = 67
+text = "Welcome to Digestion Junction!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1196970384]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -272.0
+offset_right = 181.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_d3l0r")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vivr")
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

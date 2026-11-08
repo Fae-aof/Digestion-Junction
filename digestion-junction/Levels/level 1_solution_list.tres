@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="solution_list" format=3 uid="uid://cohqmvoosqqoj"]
+
+[ext_resource type="Script" uid="uid://cqg0uuq8dlirv" path="res://Solution Making/Solution List Resource/solution_list_resource.gd" id="1_t0x0k"]
+
+[resource]
+script = ExtResource("1_t0x0k")
+names = Array[String](["amylase", "protease", "lipase"])
+metadata/_custom_type_script = "uid://cqg0uuq8dlirv"
