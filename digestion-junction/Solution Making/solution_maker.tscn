@@ -126,14 +126,28 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -417.0
-offset_top = 117.0
+offset_top = 112.0
 offset_right = -253.0
-offset_bottom = 184.0
+offset_bottom = 179.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Fats"
+
+[node name="Bacteria button" type="Button" parent="." unique_id=1971677536]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -417.0
+offset_top = 201.0
+offset_right = -253.0
+offset_bottom = 268.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("4_8wuea")
+text = "Bacteria"
 
 [node name="Check" type="Button" parent="." unique_id=1910668217]
 anchors_preset = 1
@@ -202,12 +216,40 @@ theme_override_font_sizes/font_size = 42
 text = "Water"
 horizontal_alignment = 1
 
+[node name="Milk" type="Button" parent="." unique_id=766288593]
+modulate = Color(1, 1, 1, 0.60784316)
+offset_left = 742.99994
+offset_top = 241.0
+offset_right = 930.99994
+offset_bottom = 497.0
+scale = Vector2(0.595, 0.595)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_r8pi7")
+icon = ExtResource("9_gw4ai")
+flat = true
+
+[node name="Label" type="Label" parent="Milk" unique_id=1045884313]
+layout_mode = 0
+offset_top = 263.8655
+offset_right = 176.47058
+offset_bottom = 322.68906
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("3_8wuea")
+theme_override_font_sizes/font_size = 42
+text = "Milk"
+horizontal_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="Milk" unique_id=1083659874]
+position = Vector2(544.53784, 692.4369)
+
 [connection signal="pressed" from="Drain" to="." method="_on_drain_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="pH button" to="." method="_on_p_h_button_pressed"]
 [connection signal="pressed" from="Starch button" to="Spawner" method="_on_starch_button_pressed"]
 [connection signal="pressed" from="Protein button" to="Spawner" method="_on_protein_button_pressed"]
 [connection signal="pressed" from="Fats button" to="Spawner" method="_on_fats_button_pressed"]
+[connection signal="pressed" from="Bacteria button" to="Spawner" method="_on_bacteria_button_pressed"]
 [connection signal="pressed" from="Check" to="." method="_on_check_pressed"]
 [connection signal="pressed" from="Next Level" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="Water" to="." method="_on_water_pressed"]
+[connection signal="pressed" from="Milk" to="." method="_on_milk_pressed"]

@@ -3,6 +3,7 @@ extends Node2D
 @onready var starch_scene = preload("res://Nutrients/Starch.tscn")
 @onready var proteins_scene = preload("res://Nutrients/Protein.tscn")
 @onready var fats_scene = preload("res://Nutrients/Fats.tscn")
+@onready var bacteria_scene = preload("res://Nutrients/Bacteria.tscn")
 @onready var top_left: Marker2D = $Top_Left
 @onready var bottom_right: Marker2D = $Bottom_Right
 
@@ -33,9 +34,11 @@ func spawn_nutrients(scene : PackedScene):
 func _on_starch_button_pressed() -> void:
 	spawn_nutrients(starch_scene)
 
-
 func _on_protein_button_pressed() -> void:
 	spawn_nutrients(proteins_scene)
 
 func _on_fats_button_pressed() -> void:
 	spawn_nutrients(fats_scene)
+
+func _on_bacteria_button_pressed() -> void:
+	spawn_nutrients(bacteria_scene)

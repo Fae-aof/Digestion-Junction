@@ -7,12 +7,11 @@ extends CanvasLayer
 @onready var universal_indicator: Area2D = $"Universal Indicator"
 @onready var pH_button: Button = $"pH button"
 @onready var next_level: Button = $"Next Level"
-
-@onready var amylase_toggle: Button = $"Amylase Toggle"
-@onready var protease_toggle: Button = $"Protease Toggle"
-@onready var lipase_toggle: Button = $"Lipase Toggle"
-
 @onready var flask_scene = preload("res://Solution Making/flask.tscn")
+
+@onready var lactose_scene = preload("res://Nutrients/Lactose.tscn")
+@onready var casein_scene = preload("res://Nutrients/Casein.tscn")
+@onready var milk_marker: Marker2D = $Milk/Marker2D
 
 @export var level_scene : String
 @export var solutions_list: solution_list
@@ -124,3 +123,18 @@ func _on_water_pressed() -> void:
 			i.soft = true
 	change_pH(7)
 	
+func _on_milk_pressed() -> void:
+	add_solution("milk", "ffffff70")
+	components.append("milk")
+	for i in 8:
+		var nutrient = lactose_scene.instantiate()
+		nutrient.global_position = milk_marker.global_position + Vector2(randf_range(-20, 20), randf_range(0, 20))
+		add_child(nutrient)
+		var casein = casein_scene.instantiate()
+		casein.global_position = milk_marker.global_position + Vector2(randf_range(-20, 20), randf_range(0, 20))
+		if spawner.mucus_added == true:
+			nutrient.soft = true
+			casein.soft = true
+		spawner.add_child(casein)
+		await get_tree().create_timer(0.1).timeout
+	change_pH(7)

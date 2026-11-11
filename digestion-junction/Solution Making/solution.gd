@@ -6,8 +6,9 @@ var enzyme_dict = {"amylase": "starch", "protease": "protein", "pepsin" : "prote
 					"lipase": "fats", "maltase" : "maltose", "mucin" : null,
 					"water": null, "hydrochloric acid": null, 
 					"sodium hydrogen carbonate": null,
-					"lysozyme" : "bacteria", "rennin" : "milk",
-					"lactase" : "lactose", "bile" : "fats"}
+					"lysozyme" : "bacteria", "rennin" : "casein",
+					"lactase" : "lactose", "bile" : "fats",
+					"milk" :  null}
 var filled = false
 var moving = false
 
@@ -18,11 +19,18 @@ func fill_up(solution: String, colour : String):
 		target = enzyme_dict[solution]
 		modulate = colour
 		moving = true
-		var tween_p = create_tween()
-		tween_p.tween_property(self, "position", position + Vector2(0, -130), 0.5)
-		var tween_s = create_tween()
-		tween_s.tween_property(self, "scale", Vector2(1.02, 1.1), 0.5)
-		await get_tree().create_timer(0.5).timeout
+		if solution == "milk":
+			var tween_p = create_tween()
+			tween_p.tween_property(self, "position", position + Vector2(0, -65), 0.5)
+			var tween_s = create_tween()
+			tween_s.tween_property(self, "scale", Vector2(1.02, 0.55), 0.5)
+			await get_tree().create_timer(0.5).timeout
+		else:
+			var tween_p = create_tween()
+			tween_p.tween_property(self, "position", position + Vector2(0, -130), 0.5)
+			var tween_s = create_tween()
+			tween_s.tween_property(self, "scale", Vector2(1.02, 1.1), 0.5)
+			await get_tree().create_timer(0.5).timeout
 		filled = true
 		moving = false
 

@@ -2,6 +2,8 @@ extends RigidBody2D
 
 var fats_scene
 
+@onready var galactose_scene = preload("res://Nutrients/Galactose.tscn")
+
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @export var component_scene : PackedScene
 @onready var collision: CollisionShape2D = $CollisionShape2D
@@ -26,6 +28,10 @@ func break_down():
 		time = time/3
 	var number = randi_range(min_num, max_num)
 	await get_tree().create_timer(time).timeout
+	if is_in_group("lactose"):
+		var component = galactose_scene.instantiate()
+		get_parent().add_child.call_deferred(component)
+		component.set_deferred("global_position", global_position + Vector2(randf_range(-0.1, 0.1), randf_range(-0.1, 0.1)))
 	for i in number:
 		var component = component_scene.instantiate()
 		get_parent().add_child.call_deferred(component)

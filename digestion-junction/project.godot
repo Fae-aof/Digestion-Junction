@@ -39,6 +39,9 @@ maltose=""
 lipids=""
 protein=""
 indicator=""
+bacteria=""
+lactose=""
+casein=""
 
 [physics]
 

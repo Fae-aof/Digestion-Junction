@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://kiipvntp018a"]
+
+[ext_resource type="Texture2D" uid="uid://c3aqf3x6jet74" path="res://Milestone 1 Sprites/rotating_orbs.png" id="1_m2pwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p8ne"]
+atlas = ExtResource("1_m2pwc")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwor8"]
+atlas = ExtResource("1_m2pwc")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqrow"]
+atlas = ExtResource("1_m2pwc")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rub7h"]
+atlas = ExtResource("1_m2pwc")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p8ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwor8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqrow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rub7h")
+}],
+"loop": 1,
+"name": &"Molecule",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 6.0827627
+
+[node name="Galactose" type="RigidBody2D" unique_id=521101774]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1397026834]
+scale = Vector2(0.59, 0.59)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"Molecule"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651516721]
+shape = SubResource("CircleShape2D_1vivr")
