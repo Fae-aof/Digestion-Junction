@@ -12,8 +12,8 @@
 [node name="Level 3" type="CanvasLayer" unique_id=475761041]
 layer = 2
 script = ExtResource("1_k2mch")
-texts = Array[String](["Final round! We've added sodium hydrogen carbonate and hydrochloric acid!
-They aren't enzymes, they are a base and acid respectively. ", "You see the orange strip? That's a universal indicator. Click it to user it. It turns a dark orange in acids and a dark green in bases. ", "Identify and label the solutions: 
+texts = Array[String](["Bacteria is everywhere but we can use lysozyme to get rid of it. You've been given some bacteria to help identify it.", "So you know protease breaks down proteins into polypeptides and amino acids. 
+But theres a type of protease called pepsin that only breaks them down into polypeptides.", "Identify and label the solutions: 
 amylase, protease, lipase, maltase, mucin, sodium hydrogen carbonate and hydrochloric acid"])
 
 [node name="Solution Maker" parent="." unique_id=447134398 instance=ExtResource("2_5tncv")]

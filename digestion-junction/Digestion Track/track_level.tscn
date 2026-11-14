@@ -4,12 +4,11 @@
 [ext_resource type="Script" uid="uid://ce82m4g6pa35i" path="res://Digestion Track/track_level.gd" id="1_vb88u"]
 [ext_resource type="Texture2D" uid="uid://bfgnyi8sbya7r" path="res://Sprites/forward arrow.png" id="2_vb88u"]
 [ext_resource type="Texture2D" uid="uid://bar2076lmp0br" path="res://Sprites/back arrow.png" id="3_uqpas"]
-[ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="5_fe8wv"]
+[ext_resource type="PackedScene" uid="uid://fm5xdxl86qsr" path="res://Digestion Track/track.tscn" id="5_x4dda"]
 [ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_44aes"]
 [ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="7_44aes"]
 [ext_resource type="Resource" uid="uid://c0fi0s4rej8pk" path="res://Digestion Track/Resources/track_molecules.tres" id="8_nf48s"]
 [ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="9_bjocj"]
-[ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/Lato-Bold.ttf" id="10_hoved"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(1, 0.8980392, 0.75686276, 1)
@@ -42,10 +41,10 @@ icon = ExtResource("2_vb88u")
 flat = true
 
 [node name="Pour Solution" type="Button" parent="." unique_id=968672212]
-offset_left = 1472.0
-offset_top = 208.0
-offset_right = 1654.0
-offset_bottom = 330.0
+offset_left = 1367.0
+offset_top = 189.0
+offset_right = 1549.0
+offset_bottom = 427.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "Pour"
@@ -66,17 +65,19 @@ flat = true
 anchor_mode = 0
 
 [node name="Solution Marker" type="Marker2D" parent="." unique_id=785830186]
-position = Vector2(1899, 650)
+position = Vector2(1898.9999, 448)
 scale = Vector2(1.5875236, 1.5875236)
 
-[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("5_fe8wv")]
-position = Vector2(1893, 434)
-scale = Vector2(1.5875236, 1.5875236)
+[node name="Track" parent="." unique_id=1179901484 instance=ExtResource("5_x4dda")]
+position = Vector2(1896, 287)
 
 [node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_44aes")]
-position = Vector2(1886, 105)
+position = Vector2(1886, 50)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_nf48s")
+
+[node name="Bottom_Right" parent="Spawner" index="1" unique_id=41511551]
+position = Vector2(157, 23)
 
 [node name="Components List" type="Panel" parent="." unique_id=2067161380]
 anchors_preset = 1
@@ -85,11 +86,11 @@ anchor_right = 1.0
 offset_left = 887.0
 offset_top = 74.0
 offset_right = 1178.0
-offset_bottom = 479.0
+offset_bottom = 380.0
 grow_horizontal = 0
 theme_override_styles/panel = ExtResource("9_bjocj")
 
-[node name="MarginContainer" type="MarginContainer" parent="Components List" unique_id=673415522]
+[node name="MarginContainer" type="MarginContainer" parent="Components List" unique_id=1269726109]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,14 +102,43 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="RichTextLabel" parent="Components List/MarginContainer" unique_id=1077380256]
+[node name="RichTextLabel" type="RichTextLabel" parent="Components List/MarginContainer" unique_id=815600437]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.42, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("10_hoved")
 theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-autowrap_mode = 2
+
+[node name="Up" type="Button" parent="." unique_id=1498635010]
+offset_left = 2249.8901
+offset_top = 387.0
+offset_right = 2431.8901
+offset_bottom = 509.0
+rotation = 1.5707964
+scale = Vector2(0.745, 0.745)
+icon = ExtResource("3_uqpas")
+flat = true
+
+[node name="Down" type="Button" parent="." unique_id=1200841701]
+offset_left = 2255.8901
+offset_top = 540.0
+offset_right = 2437.8901
+offset_bottom = 662.0
+rotation = 1.5707964
+scale = Vector2(0.745, 0.745)
+icon = ExtResource("2_vb88u")
+flat = true
+
+[node name="Part Label" type="Label" parent="." unique_id=104581283]
+offset_left = 2280.0
+offset_top = 494.0
+offset_right = 2508.0
+offset_bottom = 554.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "At Mouth"
 
 [connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
 [connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
 [connection signal="pressed" from="To Lab" to="." method="_on_to_lab_pressed"]
+[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
+
+[editable path="Spawner"]

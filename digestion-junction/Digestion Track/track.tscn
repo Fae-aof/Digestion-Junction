@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://fm5xdxl86qsr"]
+
+[ext_resource type="Script" uid="uid://cu3glyhuik1e4" path="res://Digestion Track/track.gd" id="1_8ygy3"]
+[ext_resource type="Texture2D" uid="uid://cxbyfmv3c2u8c" path="res://Milestone 1 Sprites/883408.png" id="1_cg5vd"]
+[ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="2_8ygy3"]
+
+[node name="Track" type="Node2D" unique_id=1179901484]
+script = ExtResource("1_8ygy3")
+
+[node name="Funnel" type="StaticBody2D" parent="." unique_id=1876549000]
+position = Vector2(0, 363)
+
+[node name="883408" type="Sprite2D" parent="Funnel" unique_id=1750187022]
+self_modulate = Color(1, 1, 1, 0.65882355)
+scale = Vector2(0.916, 0.916)
+texture = ExtResource("1_cg5vd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Funnel" unique_id=1194339792]
+scale = Vector2(0.916, 0.916)
+polygon = PackedVector2Array(-214, -212.8, -214, -148.3, -176, -100.399994, -176, -98.2, -139, -58.199997, -139, -56.100006, -97, -16.199997, -97, -15.100006, -81.877686, 22.925781, -54, 250.79999, -49, 255.79999, -20.899994, 256, 0.2999878, 247, 2.7000122, 247, 30.700012, 225, 33, 225, 51, 202, 52.200012, 202, 54, 198.5, 76.41919, 30.567688, 94.70001, -15, 96.79999, -15, 135.79999, -54, 136.9, -54, 186.9, -113, 188, -113, 212, -147, 214, -147, 214, -212.7, 188.86475, -198.68994, 180.1311, -133.18774, 116.812256, -58.951965, 55.677002, 19.650635, 31.659424, 191.04803, -33.842773, 230.34937, -61.135376, 8.733643, -192.13977, -150.65503, -192.13977, -194.32315)
+
+[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("2_8ygy3")]
+scale = Vector2(1.5875236, 1.1475236)
+
+[node name="CollisionPolygon2D" parent="Container/StaticBody2D" parent_id_path=PackedInt32Array(1660461192, 1005689041) index="0" unique_id=1092906411]
+polygon = PackedVector2Array(108.629074, -110.681175, 97.23441, -116.918, 94.95548, 108.30065, -85.08011, 107.60767, -88.878334, -115.53204, -105.59049, -107.90925, -95.715126, -96.82156, -91.157265, 105.52873, -90.438156, 124.65666, 100.96535, 127.072235, 101.792274, 108.30065, 101.792274, -91.27772)
+
+[node name="Open" type="StaticBody2D" parent="Container" unique_id=927557533]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Container/Open" unique_id=875507701]
+position = Vector2(0, -21.28241)
+scale = Vector2(1.3164063, 1.443042)
+polygon = PackedVector2Array(-83.73901, 105.10724, -88.878334, -115.53204, -105.59049, -107.90925, -95.715126, -96.82156, -91.157265, 105.52873, -85.08011, 113.8445)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Container/Open" unique_id=1582514043]
+position = Vector2(0, -21.28241)
+scale = Vector2(1.3164063, 1.443042)
+polygon = PackedVector2Array(108.629074, -110.681175, 97.23441, -116.918, 94.95548, 108.30065, 99.51334, 114.537476, 101.792274, 108.30065, 101.792274, -91.27772)
+
+[node name="Funnel2" type="StaticBody2D" parent="." unique_id=2047977187]
+position = Vector2(0, 1201)
+
+[node name="883408" type="Sprite2D" parent="Funnel2" unique_id=147252697]
+self_modulate = Color(1, 1, 1, 0.65882355)
+scale = Vector2(0.916, 0.916)
+texture = ExtResource("1_cg5vd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Funnel2" unique_id=1966747730]
+scale = Vector2(0.916, 0.916)
+polygon = PackedVector2Array(-214, -212.8, -214, -148.3, -176, -100.399994, -176, -98.2, -139, -58.199997, -139, -56.100006, -97, -16.199997, -97, -15.100006, -81.877686, 22.925781, -54, 250.79999, -49, 255.79999, -20.899994, 256, 0.2999878, 247, 2.7000122, 247, 30.700012, 225, 33, 225, 51, 202, 52.200012, 202, 54, 198.5, 76.41919, 30.567688, 94.70001, -15, 96.79999, -15, 135.79999, -54, 136.9, -54, 186.9, -113, 188, -113, 212, -147, 214, -147, 214, -212.7, 188.86475, -198.68994, 180.1311, -133.18774, 116.812256, -58.951965, 55.677002, 19.650635, 31.659424, 191.04803, -33.842773, 230.34937, -61.135376, 8.733643, -192.13977, -150.65503, -192.13977, -194.32315)
+
+[node name="Container2" parent="." unique_id=792122280 instance=ExtResource("2_8ygy3")]
+position = Vector2(0, 838)
+scale = Vector2(1.5875236, 1.1475236)
+
+[node name="CollisionPolygon2D" parent="Container2/StaticBody2D" parent_id_path=PackedInt32Array(792122280, 1005689041) index="0" unique_id=1092906411]
+polygon = PackedVector2Array(108.629074, -110.681175, 97.23441, -116.918, 94.95548, 108.30065, -85.08011, 107.60767, -88.878334, -115.53204, -105.59049, -107.90925, -95.715126, -96.82156, -91.157265, 105.52873, -87.56711, 127.072235, 101.92237, 125.26053, 101.792274, 108.30065, 101.792274, -91.27772)
+
+[node name="Open" type="StaticBody2D" parent="Container2" unique_id=459558860]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Container2/Open" unique_id=948849636]
+position = Vector2(0, -21.28241)
+scale = Vector2(1.3164063, 1.443042)
+polygon = PackedVector2Array(-83.73901, 105.10724, -88.878334, -115.53204, -105.59049, -107.90925, -95.715126, -96.82156, -91.157265, 105.52873, -85.08011, 113.8445)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Container2/Open" unique_id=1395106565]
+position = Vector2(0, -21.28241)
+scale = Vector2(1.3164063, 1.443042)
+polygon = PackedVector2Array(108.629074, -110.681175, 97.23441, -116.918, 94.95548, 108.30065, 99.51334, 114.537476, 101.792274, 108.30065, 101.792274, -91.27772)
+
+[editable path="Container"]
+[editable path="Container2"]

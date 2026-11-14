@@ -22,8 +22,8 @@ func _ready() -> void:
 		for h in dict[i]:
 			var nutrient = i.instantiate()
 			nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))
-			nutrient.min_time + 15
-			nutrient.max_time + 25
+			nutrient.min_time += 15
+			nutrient.max_time += 25
 			add_child(nutrient)
 
 
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			for h in randi_range(0, dict.values()[slot]):
 				var nutrient = dict.keys()[slot].instantiate()
 				nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))
-				nutrient.min_time + 15
-				nutrient.max_time + 25
+				nutrient.min_time += 15
+				nutrient.max_time += 25
 				add_child(nutrient)
 		time = 0
