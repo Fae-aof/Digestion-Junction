@@ -4,6 +4,12 @@ extends CanvasLayer
 @onready var camera: Camera2D = $Camera2D
 @onready var mixed_scene = preload("res://Solution Making/mixed_solution.tscn")
 @onready var solution_marker: Marker2D = $"Solution Marker"
+@onready var label: RichTextLabel = $"Components List/MarginContainer/Label"
+
+var answers = ["mucin", "water", "amylase", "lysozyme"]
+var correct = []
+var done_count = 0
+
 
 func _on_to_track_pressed() -> void:
 	var tween = create_tween()
@@ -15,8 +21,26 @@ func _on_to_lab_pressed() -> void:
 
 
 func _on_pour_solution_pressed() -> void:
-	add_solution(solution_maker.components)
-		
+	var incorrect = solution_maker.components.duplicate()
+	for i in solution_maker.components:
+		if answers.has(i):
+			incorrect.erase(i)
+			if !correct.has(i):
+				correct.append(i)
+				done_count += 1
+	add_solution(correct)
+	label.text = ""
+	for i in correct:
+		label.push_color("196b00")
+		label.append_text(i + "\n")
+	for i in incorrect:
+		label.push_color("6b0000")
+		label.append_text(i + "\n")
+	if done_count == answers.size():
+		label.push_font_size(40)
+		label.push_color("196b00")
+		label.append_text("All Done!")
+
 func add_solution(components : Array):
 	var new_solution = mixed_scene.instantiate()
 	solution_marker.add_child(new_solution)

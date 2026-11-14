@@ -3,11 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://b5tw7q72jl324" path="res://Nutrients/Starch.tscn" id="1_qcfym"]
 [ext_resource type="PackedScene" uid="uid://d1tamq3kgnvad" path="res://Nutrients/Protein.tscn" id="2_r2747"]
 [ext_resource type="Script" uid="uid://d1agw78g2qkh1" path="res://Digestion Track/Resources/Molecule List.gd" id="3_7g1nx"]
+[ext_resource type="PackedScene" uid="uid://ks78l4ayng74" path="res://Nutrients/Bacteria.tscn" id="3_eikek"]
+[ext_resource type="PackedScene" uid="uid://cn8ju2mvij2b" path="res://Nutrients/Fats.tscn" id="4_eo0fp"]
+[ext_resource type="PackedScene" uid="uid://6ug4wecp7c7o" path="res://Nutrients/Casein.tscn" id="5_k7yct"]
+[ext_resource type="PackedScene" uid="uid://busa55go2t2g4" path="res://Nutrients/Lactose.tscn" id="6_pcw0s"]
 
 [resource]
 script = ExtResource("3_7g1nx")
 molecule_dict = Dictionary[PackedScene, int]({
-ExtResource("1_qcfym"): 8,
-ExtResource("2_r2747"): 10
+ExtResource("1_qcfym"): 6,
+ExtResource("2_r2747"): 6,
+ExtResource("3_eikek"): 4,
+ExtResource("4_eo0fp"): 6,
+ExtResource("5_k7yct"): 5,
+ExtResource("6_pcw0s"): 3
 })
 metadata/_custom_type_script = "uid://d1agw78g2qkh1"

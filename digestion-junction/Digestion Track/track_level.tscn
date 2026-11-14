@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_44aes"]
 [ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="7_44aes"]
 [ext_resource type="Resource" uid="uid://c0fi0s4rej8pk" path="res://Digestion Track/Resources/track_molecules.tres" id="8_nf48s"]
+[ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="9_bjocj"]
+[ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/Lato-Bold.ttf" id="10_hoved"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(1, 0.8980392, 0.75686276, 1)
@@ -63,16 +65,49 @@ flat = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=529686251]
 anchor_mode = 0
 
-[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("5_fe8wv")]
-position = Vector2(1893, 300)
-
 [node name="Solution Marker" type="Marker2D" parent="." unique_id=785830186]
-position = Vector2(1899, 438)
+position = Vector2(1899, 650)
+scale = Vector2(1.5875236, 1.5875236)
+
+[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("5_fe8wv")]
+position = Vector2(1893, 434)
+scale = Vector2(1.5875236, 1.5875236)
 
 [node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_44aes")]
-position = Vector2(1886, 55)
+position = Vector2(1886, 105)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_nf48s")
+
+[node name="Components List" type="Panel" parent="." unique_id=2067161380]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 887.0
+offset_top = 74.0
+offset_right = 1178.0
+offset_bottom = 479.0
+grow_horizontal = 0
+theme_override_styles/panel = ExtResource("9_bjocj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Components List" unique_id=673415522]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="RichTextLabel" parent="Components List/MarginContainer" unique_id=1077380256]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.42, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("10_hoved")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+autowrap_mode = 2
 
 [connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
 [connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
