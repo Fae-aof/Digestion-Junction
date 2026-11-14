@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="molecule_List" format=3 uid="uid://c0fi0s4rej8pk"]
+
+[ext_resource type="PackedScene" uid="uid://b5tw7q72jl324" path="res://Nutrients/Starch.tscn" id="1_qcfym"]
+[ext_resource type="PackedScene" uid="uid://d1tamq3kgnvad" path="res://Nutrients/Protein.tscn" id="2_r2747"]
+[ext_resource type="Script" uid="uid://d1agw78g2qkh1" path="res://Digestion Track/Resources/Molecule List.gd" id="3_7g1nx"]
+
+[resource]
+script = ExtResource("3_7g1nx")
+molecule_dict = Dictionary[PackedScene, int]({
+ExtResource("1_qcfym"): 8,
+ExtResource("2_r2747"): 10
+})
+metadata/_custom_type_script = "uid://d1agw78g2qkh1"

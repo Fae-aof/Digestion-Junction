@@ -25,8 +25,8 @@ cheats = true
 
 [node name="Guide" type="Panel" parent="." unique_id=1112067197]
 offset_left = 103.0
-offset_top = 433.0
-offset_right = 746.0
+offset_top = 434.0
+offset_right = 748.0
 offset_bottom = 608.0
 theme_override_styles/panel = ExtResource("5_ku8fe")
 

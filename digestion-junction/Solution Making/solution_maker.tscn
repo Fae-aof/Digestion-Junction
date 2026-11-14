@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dt11t02dlt8ws"]
 
 [ext_resource type="Script" uid="uid://bkhst1y0o17i8" path="res://Solution Making/solution_maker.gd" id="1_l5vax"]
+[ext_resource type="Resource" uid="uid://b76eq2sc3kqy6" path="res://Solution Making/Solution List Resource/solution_list.tres" id="2_eh6d0"]
 [ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/Lato-Bold.ttf" id="3_8wuea"]
+[ext_resource type="Resource" uid="uid://ccguvsuuw4vx" path="res://Solution Making/Solution List Resource/flask_sprite_list.tres" id="3_lrdnn"]
 [ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="4_8wuea"]
 [ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="4_g6usb"]
 [ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_jpax7"]
@@ -24,8 +26,12 @@ bg_color = Color(0.23248088, 0.23248094, 0.2324808, 1)
 
 [node name="Solution Maker" type="CanvasLayer" unique_id=447134398 groups=["indicator"]]
 script = ExtResource("1_l5vax")
+solutions_list = ExtResource("2_eh6d0")
+sprites_list = ExtResource("3_lrdnn")
+flask_count = 12
 
 [node name="Panel" type="Panel" parent="." unique_id=936418971]
+custom_minimum_size = Vector2(1280, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -241,6 +247,8 @@ horizontal_alignment = 1
 
 [node name="Marker2D" type="Marker2D" parent="Milk" unique_id=1083659874]
 position = Vector2(544.53784, 692.4369)
+
+[node name="Casein" type="Node2D" parent="." unique_id=678704765]
 
 [connection signal="pressed" from="Drain" to="." method="_on_drain_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

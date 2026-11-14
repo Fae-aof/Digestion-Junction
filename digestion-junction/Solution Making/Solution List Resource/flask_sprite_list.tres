@@ -1,15 +1,17 @@
 [gd_resource type="Resource" script_class="sprite_list" format=3 uid="uid://ccguvsuuw4vx"]
 
 [ext_resource type="Script" uid="uid://mkeyn1cfuan6" path="res://Solution Making/Solution List Resource/sprite_list_resource.gd" id="1_w0y0l"]
-[ext_resource type="Texture2D" uid="uid://drpk17nam0lxs" path="res://Milestone 1 Sprites/red flask.png" id="2_4nq2r"]
-[ext_resource type="Texture2D" uid="uid://c5ce6v6ivt5qm" path="res://Milestone 1 Sprites/blue flask.png" id="3_y726c"]
-[ext_resource type="Texture2D" uid="uid://nci73bi47inx" path="res://Milestone 1 Sprites/yellow flask.png" id="4_4u26s"]
-[ext_resource type="Texture2D" uid="uid://gijwjhqvgcgr" path="res://Milestone 1 Sprites/green flask.png" id="5_c4vpu"]
-[ext_resource type="Texture2D" uid="uid://cyowm448pm8sg" path="res://Milestone 1 Sprites/purple flask.png" id="6_ye1yq"]
+[ext_resource type="Texture2D" uid="uid://dx7ucfg5yfjw8" path="res://Sprites/red flask.png" id="2_y726c"]
+[ext_resource type="Texture2D" uid="uid://cgf1a58kok4rl" path="res://Sprites/blue flask.png" id="3_4u26s"]
+[ext_resource type="Texture2D" uid="uid://dvv5bsy2dgg4x" path="res://Sprites/yellow flask.png" id="4_c4vpu"]
+[ext_resource type="Texture2D" uid="uid://bik02lfax13rg" path="res://Sprites/green flask.png" id="5_ye1yq"]
+[ext_resource type="Texture2D" uid="uid://bq7cypmb64anf" path="res://Sprites/purple flask.png" id="6_lx2l3"]
+[ext_resource type="Texture2D" uid="uid://1t8bu42w3jd2" path="res://Sprites/orange flask.png" id="7_u0io6"]
+[ext_resource type="Texture2D" uid="uid://bd0jaddj3ebtx" path="res://Sprites/pink flask.png" id="8_xntbl"]
 
 [resource]
 script = ExtResource("1_w0y0l")
-sprites = Array[Texture]([ExtResource("2_4nq2r"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu"), ExtResource("6_ye1yq"), ExtResource("3_y726c"), ExtResource("4_4u26s"), ExtResource("5_c4vpu")])
-colours = Array[String](["ff666653", "98ffff53", "ffff8253", "8aff8c53", "ff9dff53", "98ffff53", "ffff8253", "8aff8c53"])
-numbers = Array[int]([0, 1, 2, 3, 4, 5, 6, 7])
+sprites = Array[Texture]([ExtResource("2_y726c"), ExtResource("3_4u26s"), ExtResource("4_c4vpu"), ExtResource("5_ye1yq"), ExtResource("6_lx2l3"), ExtResource("7_u0io6"), ExtResource("8_xntbl"), ExtResource("2_y726c"), ExtResource("3_4u26s"), ExtResource("4_c4vpu"), ExtResource("5_ye1yq"), ExtResource("6_lx2l3")])
+colours = Array[String](["ff666680", "1d77cb80", "fff32e80", "2cb72f80", "ac65fc80", "ec5d0080", "f42d8d80", "ff666680", "1d77cb80", "fff32e80", "2cb72f80", "ac65fc80"])
+numbers = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 metadata/_custom_type_script = "uid://mkeyn1cfuan6"

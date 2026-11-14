@@ -67,6 +67,8 @@ func _on_reset_pressed() -> void:
 	var all_molecules = spawner.get_children()
 	for i in all_molecules:
 		i.queue_free()
+	for i in $Casein.get_children():
+		i.queue_free()
 
 func flask_pressed(solution_name : String, colour : String):
 	add_solution(solution_name, colour)
@@ -135,6 +137,6 @@ func _on_milk_pressed() -> void:
 		if spawner.mucus_added == true:
 			nutrient.soft = true
 			casein.soft = true
-		spawner.add_child(casein)
+		add_child(casein)
 		await get_tree().create_timer(0.1).timeout
 	change_pH(7)

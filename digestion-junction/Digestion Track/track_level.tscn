@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://broflgkg2jq7f"]
+
+[ext_resource type="PackedScene" uid="uid://dt11t02dlt8ws" path="res://Solution Making/solution_maker.tscn" id="1_6exo4"]
+[ext_resource type="Script" uid="uid://ce82m4g6pa35i" path="res://Digestion Track/track_level.gd" id="1_vb88u"]
+[ext_resource type="Texture2D" uid="uid://bfgnyi8sbya7r" path="res://Sprites/forward arrow.png" id="2_vb88u"]
+[ext_resource type="Texture2D" uid="uid://bar2076lmp0br" path="res://Sprites/back arrow.png" id="3_uqpas"]
+[ext_resource type="PackedScene" uid="uid://bkcfulmrtllt3" path="res://Solution Making/container.tscn" id="5_fe8wv"]
+[ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="6_44aes"]
+[ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="7_44aes"]
+[ext_resource type="Resource" uid="uid://c0fi0s4rej8pk" path="res://Digestion Track/Resources/track_molecules.tres" id="8_nf48s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(1, 0.8980392, 0.75686276, 1)
+
+[node name="Track Level" type="CanvasLayer" unique_id=1752386766]
+layer = 2
+follow_viewport_enabled = true
+script = ExtResource("1_vb88u")
+
+[node name="Solution Maker" parent="." unique_id=447134398 instance=ExtResource("1_6exo4")]
+follow_viewport_enabled = true
+cheats = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1898073826]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1280.0
+offset_right = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1vivr")
+
+[node name="To Track" type="Button" parent="." unique_id=54326457]
+offset_left = 1097.0
+offset_top = 598.0
+offset_right = 1279.0
+offset_bottom = 720.0
+icon = ExtResource("2_vb88u")
+flat = true
+
+[node name="Pour Solution" type="Button" parent="." unique_id=968672212]
+offset_left = 1472.0
+offset_top = 208.0
+offset_right = 1654.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Pour"
+icon = ExtResource("2_vb88u")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="To Lab" type="Button" parent="." unique_id=1669106102]
+offset_left = 1280.0
+offset_top = 598.0
+offset_right = 1462.0
+offset_bottom = 720.0
+icon = ExtResource("3_uqpas")
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=529686251]
+anchor_mode = 0
+
+[node name="Container" parent="." unique_id=1660461192 instance=ExtResource("5_fe8wv")]
+position = Vector2(1893, 300)
+
+[node name="Solution Marker" type="Marker2D" parent="." unique_id=785830186]
+position = Vector2(1899, 438)
+
+[node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_44aes")]
+position = Vector2(1886, 55)
+script = ExtResource("7_44aes")
+molecule_list = ExtResource("8_nf48s")
+
+[connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
+[connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
+[connection signal="pressed" from="To Lab" to="." method="_on_to_lab_pressed"]
