@@ -56,8 +56,8 @@ func add_solution(components : Array):
 
 
 func _on_up_pressed() -> void:
-	var time = 0.4
-	track.constant_linear_velocity.y = 3
+	var time = 0.5
+	track.constant_linear_velocity.y = 10
 	var tween = create_tween()
 	tween.tween_property(track, "global_position", track.global_position + Vector2(0, 250), time)
 	var tweenS = create_tween()
@@ -68,8 +68,8 @@ func _on_up_pressed() -> void:
 	
 
 func _on_down_pressed() -> void:
-	var time = 0.4
-	track.constant_linear_velocity.y = -3
+	var time = 0.5
+	track.constant_linear_velocity.y = -10
 	var tween = create_tween()
 	tween.tween_property(track, "global_position", track.global_position + Vector2(0, -250), time)
 	var tweenS = create_tween()

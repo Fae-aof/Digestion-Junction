@@ -84,7 +84,6 @@ position = Vector2(1896, 287)
 
 [node name="Track" parent="Track Spot" unique_id=1179901484 instance=ExtResource("5_x4dda")]
 position = Vector2(0, 498)
-constant_linear_velocity = Vector2(0, 1.59)
 
 [node name="Components List" type="Panel" parent="." unique_id=2067161380]
 anchors_preset = 1

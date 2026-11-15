@@ -1,11 +1,7 @@
 [gd_resource type="Resource" script_class="molecule_List" format=3 uid="uid://boticvbrbrxsk"]
 
-[ext_resource type="PackedScene" uid="uid://d2a7eqi5tg1lh" path="res://Digestion Track/Track Molecule.tscn" id="1_qu28g"]
 [ext_resource type="Script" uid="uid://d1agw78g2qkh1" path="res://Digestion Track/Resources/Molecule List.gd" id="7_w86er"]
 
 [resource]
 script = ExtResource("7_w86er")
-molecule_dict = Dictionary[PackedScene, int]({
-ExtResource("1_qu28g"): 14
-})
 metadata/_custom_type_script = "uid://d1agw78g2qkh1"

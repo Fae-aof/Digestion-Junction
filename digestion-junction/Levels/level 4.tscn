@@ -8,20 +8,38 @@
 [ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="6_d3hl5"]
 [ext_resource type="Texture2D" uid="uid://bfgnyi8sbya7r" path="res://Sprites/forward arrow.png" id="7_kevka"]
 [ext_resource type="Texture2D" uid="uid://bar2076lmp0br" path="res://Sprites/back arrow.png" id="8_jkkv7"]
+[ext_resource type="Texture2D" uid="uid://c50uifinx3jke" path="res://Milestone 1 Sprites/guide (1).png" id="9_jkkv7"]
+[ext_resource type="Texture2D" uid="uid://cbnsjrs8pttoo" path="res://Sprites/Button.png" id="10_8c6t6"]
+[ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/Lato-Bold.ttf" id="11_kdtda"]
+[ext_resource type="Texture2D" uid="uid://bfol37kc2g5p1" path="res://Sprites/Molecules/mol_starch.png" id="12_dgm2l"]
+[ext_resource type="Texture2D" uid="uid://dte0y7biwrxkh" path="res://Sprites/Molecules/mol_protein.png" id="13_31mj1"]
+[ext_resource type="Texture2D" uid="uid://si4u1sqiytdw" path="res://Sprites/Molecules/mol_fats.png" id="14_uhtjc"]
+[ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="15_tdh42"]
 
-[node name="Level 3" type="CanvasLayer" unique_id=475761041]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lo6iq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("10_8c6t6")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 100.0
+texture_margin_bottom = 30.0
+
+[node name="Level 4" type="CanvasLayer" unique_id=475761041]
 layer = 2
 script = ExtResource("1_k2mch")
-texts = Array[String](["Bacteria is everywhere but we can use lysozyme to get rid of it. You've been given some bacteria to help identify it.", "So you know protease breaks down proteins into polypeptides and amino acids. 
-But theres a type of protease called pepsin that only breaks them down into polypeptides.", "Identify and label the solutions: 
-amylase, protease, lipase, maltase, mucin, sodium hydrogen carbonate and hydrochloric acid"])
+texts = Array[String](["Bacteria is everywhere but we can use lysozyme to get rid of it. You've been given some bacteria to help identify it.", "You's also been given bile which makes fat molecules split into smaller globules. Smaller fat molecules break down faster.", "So you know protease breaks down proteins into polypeptides and amino acids. 
+But theres a type of protease called pepsin that only breaks them down into polypeptides."])
 
 [node name="Solution Maker" parent="." unique_id=447134398 instance=ExtResource("2_5tncv")]
-level_scene = "res://Levels/opening.tscn"
+level_scene = "res://Levels/level 5.tscn"
 solutions_list = ExtResource("3_k2mch")
 sprites_list = ExtResource("4_6mypk")
 flask_count = 7
 cheats = true
+disable_bact = false
 
 [node name="Guide" type="Panel" parent="." unique_id=1112067197]
 offset_left = 103.0
@@ -72,5 +90,150 @@ scale = Vector2(0.585, 0.585)
 icon = ExtResource("8_jkkv7")
 flat = true
 
+[node name="Guide Button" type="Button" parent="." unique_id=1714968660]
+offset_left = -4.0
+offset_top = 8.000001
+offset_right = 516.0
+offset_bottom = 528.0
+scale = Vector2(0.145, 0.145)
+icon = ExtResource("9_jkkv7")
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=49177897]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=910585346]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lo6iq")
+
+[node name="Close" type="Button" parent="MarginContainer/Panel" unique_id=1890494970]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -108.0
+offset_right = 120.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.23685831, 0.10008205, 0.008791575, 1)
+theme_override_fonts/font = ExtResource("11_kdtda")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_ku8fe")
+text = "Close"
+
+[node name="Label" type="Label" parent="MarginContainer/Panel" unique_id=896157912]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 33.0
+offset_right = 553.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "amylase breaks starch into maltose"
+
+[node name="MolStarch" type="Sprite2D" parent="MarginContainer/Panel" unique_id=851414626]
+position = Vector2(596, 51.999992)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("12_dgm2l")
+
+[node name="Label2" type="Label" parent="MarginContainer/Panel" unique_id=1074202896]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 90.99997
+offset_right = 892.0
+offset_bottom = 147.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "protease breaks protein into polypeptides and amino acids"
+
+[node name="MolStarch2" type="Sprite2D" parent="MarginContainer/Panel" unique_id=425959657]
+position = Vector2(941, 110.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("13_31mj1")
+
+[node name="Label3" type="Label" parent="MarginContainer/Panel" unique_id=1714896054]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 162.99997
+offset_right = 647.0
+offset_bottom = 219.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "lipase breaks fats into lipids"
+
+[node name="MolStarch3" type="Sprite2D" parent="MarginContainer/Panel" unique_id=1873163665]
+position = Vector2(488, 182.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("14_uhtjc")
+
+[node name="Label4" type="Label" parent="MarginContainer/Panel" unique_id=1698956413]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 227.99997
+offset_right = 647.0
+offset_bottom = 284.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "maltase breaks maltose into glucose"
+
+[node name="MolStarch4" type="Sprite2D" parent="MarginContainer/Panel" unique_id=2141369363]
+position = Vector2(601, 247.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("15_tdh42")
+
+[node name="Label5" type="Label" parent="MarginContainer/Panel" unique_id=978220173]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 291.0
+offset_right = 906.0
+offset_bottom = 333.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "mix water with mucin to make molecules break down faster"
+
+[node name="Label6" type="Label" parent="MarginContainer/Panel" unique_id=22250964]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 353.0
+offset_right = 906.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "hydrochloric acid makes turn the indicator red"
+
+[node name="Label7" type="Label" parent="MarginContainer/Panel" unique_id=1633476991]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 410.0
+offset_right = 906.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "sodium hydrogen carbonate turns the indicator dark green"
+
+[node name="Label8" type="Label" parent="MarginContainer/Panel" unique_id=138130780]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 463.0
+offset_right = 978.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "bile breaks fats into smaller globules, lysozyme removes bacteria"
+
 [connection signal="pressed" from="Forward" to="." method="_on_forward_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Guide Button" to="." method="_on_guide_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/Close" to="." method="_on_close_pressed"]

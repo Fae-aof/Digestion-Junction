@@ -17,10 +17,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
 radius = 39.22323
 
-[node name="TrackMolecule" type="RigidBody2D" unique_id=246993542]
+[node name="TrackMolecule" type="RigidBody2D" unique_id=246993542 groups=["small"]]
 mass = 22.335
-gravity_scale = 0.93
 freeze_mode = 1
+continuous_cd = 2
 script = ExtResource("1_ttyus")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=644171979]

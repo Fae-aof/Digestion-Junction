@@ -20,6 +20,11 @@ extends CanvasLayer
 
 @export var cheats = false
 @export var disable_pH = false
+@export var disable_milk = true
+@export var disable_bact = true
+@onready var milk: Button = $Milk
+@onready var bacteria_button: Button = $"Bacteria button"
+
 
 var flasks
 var components =  []
@@ -29,6 +34,10 @@ var pH_solutions_dict = {"hydrochloric acid": 2, "sodium hydrogen carbonate": 8,
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if disable_milk:
+		milk.hide()
+	if disable_bact:
+		bacteria_button.hide()
 	if disable_pH:
 		universal_indicator.hide()
 		pH_button.hide()

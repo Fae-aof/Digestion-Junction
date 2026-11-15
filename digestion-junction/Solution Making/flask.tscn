@@ -31,15 +31,15 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 4.62037
+offset_left = -3.4652767
 offset_top = 123.5949
-offset_right = 108.65761
+offset_right = 124.01698
 offset_bottom = 166.08896
 grow_vertical = 2
 scale = Vector2(0.7882905, 0.7882905)
 theme_override_colors/search_result_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = ExtResource("3_afk7r")
 
 [node name="Check" type="Sprite2D" parent="." unique_id=473963715]
