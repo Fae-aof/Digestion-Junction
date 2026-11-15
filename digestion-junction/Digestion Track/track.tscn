@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cjwanqxconiqw" path="res://Sprites/lineart of track.PNG" id="2_cg5vd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
-size = Vector2(378.5, 59.5)
+size = Vector2(378.5, 126)
 
 [node name="Track" type="StaticBody2D" unique_id=733336893]
 script = ExtResource("1_8ygy3")
@@ -21,11 +21,11 @@ polygon = PackedVector2Array(-243, -558, -163, -501, -92, -494, -87, -435, -71, 
 
 [node name="Left 2" type="CollisionPolygon2D" parent="." unique_id=441769106]
 position = Vector2(133, 570)
-polygon = PackedVector2Array(-191, -623, -143, -503, -137, -476, -190, -470, -232, -466, -323, -389, -339, -258, -360, -124, -288, -3, -175, 64, -158, 1, -233, -31, -247, -96, -307, -190, -272, -264, -269, -390, -237, -426, -153, -431, -119, -411, -78, -417, -79, -449, -114, -502, -129, -516, -158, -616)
+polygon = PackedVector2Array(-191, -623, -189, -512, -137, -476, -190, -470, -232, -466, -323, -389, -339, -258, -360, -124, -288, -3, -175, 64, -158, 1, -233, -31, -247, -96, -307, -190, -272, -264, -269, -390, -237, -426, -153, -431, -119, -411, -78, -417, -79, -449, -114, -502, -129, -516, -158, -616)
 
 [node name="Right 2" type="CollisionPolygon2D" parent="." unique_id=535582447]
 position = Vector2(310, 687)
-polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -179, -467, -228, -442, -265, -443, -294, -459, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -176, -202, -190, -127, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
+polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -187, -452, -290, -452, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -176, -202, -190, -127, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
 
 [node name="Barriers" type="StaticBody2D" parent="." unique_id=2080775581]
 
@@ -43,7 +43,7 @@ polygon = PackedVector2Array(-31, -441, 61, -444, 68, -518, -46, -488)
 [node name="Area2D" type="Area2D" parent="." unique_id=397681386]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1766917178]
-position = Vector2(19.75, 211.75)
+position = Vector2(3, 710)
 shape = SubResource("RectangleShape2D_1vivr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

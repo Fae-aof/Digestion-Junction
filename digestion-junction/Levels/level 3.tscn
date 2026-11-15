@@ -100,6 +100,7 @@ icon = ExtResource("9_q0vd2")
 flat = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1605469256]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

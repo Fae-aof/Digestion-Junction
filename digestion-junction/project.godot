@@ -43,6 +43,7 @@ bacteria=""
 lactose=""
 casein=""
 small=""
+movable=""
 
 [physics]
 

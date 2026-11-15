@@ -22,9 +22,10 @@ extends CanvasLayer
 @export var disable_pH = false
 @export var disable_milk = true
 @export var disable_bact = true
+@export var disable_check = false
+@onready var check: Button = $Check
 @onready var milk: Button = $Milk
 @onready var bacteria_button: Button = $"Bacteria button"
-
 
 var flasks
 var components =  []
@@ -41,6 +42,8 @@ func _ready() -> void:
 	if disable_pH:
 		universal_indicator.hide()
 		pH_button.hide()
+	if disable_check:
+		check.hide()
 	for i in flask_count:
 		var new_flask = flask_scene.instantiate()
 		flask_parent.add_child(new_flask)

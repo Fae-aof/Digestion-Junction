@@ -40,15 +40,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -181.0
-offset_top = -272.0
-offset_right = 181.0
-offset_bottom = -172.0
+offset_left = -355.25
+offset_top = -256.0
+offset_right = 355.25
+offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_d3l0r")
 theme_override_font_sizes/font_size = 47
 theme_override_styles/normal = SubResource("StyleBoxFlat_1vivr")
-text = "Play Again"
+text = "Next Section (WIP)"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
