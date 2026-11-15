@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://boo3g884e32rl" path="res://Sprites/beaker empty.png" id="8_gw4ai"]
 [ext_resource type="Gradient" uid="uid://dyd8mll2054le" path="res://Solution Making/pH Gradient.tres" id="8_hxh3l"]
 [ext_resource type="Texture2D" uid="uid://rdtyvlh05msu" path="res://Sprites/water.png" id="9_gw4ai"]
+[ext_resource type="Texture2D" uid="uid://wvf2fdd0pdlu" path="res://Sprites/shelf.png" id="10_gkymh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(1, 0.8980392, 0.75686276, 1)
@@ -186,13 +187,28 @@ theme_override_styles/normal = ExtResource("4_8wuea")
 text = "Complete
 Level"
 
+[node name="Shelf" type="Sprite2D" parent="." unique_id=497864510]
+position = Vector2(350, 157)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("10_gkymh")
+
+[node name="Shelf2" type="Sprite2D" parent="." unique_id=999399932]
+position = Vector2(350, 337)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("10_gkymh")
+
+[node name="Shelf3" type="Sprite2D" parent="." unique_id=1478362030]
+position = Vector2(350, 517)
+scale = Vector2(0.67, 0.67)
+texture = ExtResource("10_gkymh")
+
 [node name="Flasks" type="GridContainer" parent="." unique_id=396196593]
-offset_left = 34.0
+offset_left = 78.0
 offset_top = 25.0
-offset_right = 670.0
+offset_right = 634.0
 offset_bottom = 429.0
-theme_override_constants/h_separation = 170
-theme_override_constants/v_separation = 210
+theme_override_constants/h_separation = 152
+theme_override_constants/v_separation = 180
 columns = 4
 
 [node name="BeakerEmpty" type="Sprite2D" parent="." unique_id=710304786]

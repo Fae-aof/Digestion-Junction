@@ -7,8 +7,8 @@ extends CanvasLayer
 @onready var label: RichTextLabel = $"Components List/MarginContainer/RichTextLabel"
 @onready var spawner: Node2D = $Spawner
 @onready var part_label: Label = $"Part Label"
+@onready var track: StaticBody2D = $"Track Spot/Track"
 
-@onready var track: Node2D = $Track
 
 var answers
 var correct = []
@@ -57,18 +57,23 @@ func add_solution(components : Array):
 
 func _on_up_pressed() -> void:
 	var time = 0.4
+	track.constant_linear_velocity.y = 3
 	var tween = create_tween()
 	tween.tween_property(track, "global_position", track.global_position + Vector2(0, 250), time)
 	var tweenS = create_tween()
 	tweenS.tween_property(spawner, "global_position", spawner.global_position + Vector2(0, 250), time)
 	var tweenSo = create_tween()
 	tweenSo.tween_property(solution_marker, "global_position", solution_marker.global_position + Vector2(0, 250), time)
+	track.constant_linear_velocity.y = 0
+	
 
 func _on_down_pressed() -> void:
 	var time = 0.4
+	track.constant_linear_velocity.y = -3
 	var tween = create_tween()
 	tween.tween_property(track, "global_position", track.global_position + Vector2(0, -250), time)
 	var tweenS = create_tween()
 	tweenS.tween_property(spawner, "global_position", spawner.global_position + Vector2(0, -250), time)
 	var tweenSo = create_tween()
 	tweenSo.tween_property(solution_marker, "global_position", solution_marker.global_position + Vector2(0, -250), time)
+	track.constant_linear_velocity.y = 0

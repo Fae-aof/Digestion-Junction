@@ -12,6 +12,7 @@ var answers = [mouth_ans, stomach_ans]
 var current_ans
 
 func _ready() -> void:
+	position = Vector2(0, 500)
 	barriers = [bar1, bar2]
 	current_ans = answers.pop_front()
 

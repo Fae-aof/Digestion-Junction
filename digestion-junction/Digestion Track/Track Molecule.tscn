@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d2a7eqi5tg1lh"]
+
+[ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="1_4x71t"]
+[ext_resource type="Script" uid="uid://dawbk2qxlgih2" path="res://Nutrients/Nutrient.gd" id="1_ttyus"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4x71t")
+}],
+"loop": 1,
+"name": &"Molecule",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 39.22323
+
+[node name="TrackMolecule" type="RigidBody2D" unique_id=246993542]
+mass = 22.335
+gravity_scale = 0.93
+freeze_mode = 1
+script = ExtResource("1_ttyus")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=644171979]
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_1vivr")
+animation = &"Molecule"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501776737]
+scale = Vector2(0.13, 0.13)
+shape = SubResource("CircleShape2D_1vivr")
