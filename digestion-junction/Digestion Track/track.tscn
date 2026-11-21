@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://cu3glyhuik1e4" path="res://Digestion Track/track.gd" id="1_8ygy3"]
 [ext_resource type="Texture2D" uid="uid://cjwanqxconiqw" path="res://Sprites/lineart of track.PNG" id="2_cg5vd"]
+[ext_resource type="PackedScene" uid="uid://btjqgmgup6buy" path="res://Digestion Track/peristalsis.tscn" id="3_8ygy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
 size = Vector2(378.5, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(184, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(60, 22)
 
 [node name="Track" type="StaticBody2D" unique_id=733336893]
 script = ExtResource("1_8ygy3")
@@ -46,4 +53,67 @@ polygon = PackedVector2Array(-31, -441, 61, -444, 68, -518, -46, -488)
 position = Vector2(3, 710)
 shape = SubResource("RectangleShape2D_1vivr")
 
+[node name="Teeth" type="Area2D" parent="." unique_id=575110342 groups=["teeth"]]
+position = Vector2(-77, -580)
+
+[node name="Top teeth" type="CollisionShape2D" parent="Teeth" unique_id=1699202606]
+position = Vector2(0, -74)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="Bottom teeth" type="CollisionShape2D" parent="Teeth" unique_id=336527218]
+position = Vector2(0, 74)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="Esoph" type="Area2D" parent="." unique_id=1805188069]
+visible = false
+position = Vector2(0, -430)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esoph" unique_id=1982887281]
+position = Vector2(-8, 15)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Esoph" unique_id=676437331]
+position = Vector2(-8, 111)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Esoph" unique_id=1274592634]
+position = Vector2(-8, 213)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="Friction" type="Button" parent="." unique_id=1327532806]
+offset_left = -34.0
+offset_top = -469.0
+offset_right = 29.0
+offset_bottom = -14.0
+flat = true
+
+[node name="Peri1" type="Node2D" parent="." unique_id=714166358]
+
+[node name="Peristalsis" parent="Peri1" unique_id=1236845276 instance=ExtResource("3_8ygy3")]
+position = Vector2(-11, -424)
+
+[node name="Peristalsis2" parent="Peri1" unique_id=965425987 instance=ExtResource("3_8ygy3")]
+position = Vector2(-7, -212)
+
+[node name="Peri2" type="Node2D" parent="." unique_id=2010762670]
+position = Vector2(0, 43)
+
+[node name="Peristalsis" parent="Peri2" unique_id=1291056959 instance=ExtResource("3_8ygy3")]
+position = Vector2(-11, -394)
+
+[node name="Peristalsis3" parent="Peri2" unique_id=1929237394 instance=ExtResource("3_8ygy3")]
+position = Vector2(0, -185)
+
+[node name="Peri3" type="Node2D" parent="." unique_id=1707992060]
+position = Vector2(0, 43)
+
+[node name="Peristalsis2" parent="Peri3" unique_id=790372393 instance=ExtResource("3_8ygy3")]
+position = Vector2(-11, -324)
+
+[node name="Peristalsis4" parent="Peri3" unique_id=1802769886 instance=ExtResource("3_8ygy3")]
+position = Vector2(0, -117)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Teeth" to="." method="_on_teeth_body_entered"]
+[connection signal="body_exited" from="Esoph" to="." method="_on_esoph_body_exited"]
+[connection signal="pressed" from="Friction" to="." method="_on_friction_pressed"]

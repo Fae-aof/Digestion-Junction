@@ -42,7 +42,6 @@ level_scene = "res://Levels/level 2.tscn"
 solutions_list = ExtResource("2_a63mx")
 sprites_list = ExtResource("3_540j4")
 flask_count = 3
-cheats = true
 disable_pH = true
 
 [node name="Guide" type="Panel" parent="." unique_id=1112067197]

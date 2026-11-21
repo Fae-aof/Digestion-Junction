@@ -20,19 +20,19 @@ func _ready() -> void:
 	for i in num:
 		var nutrient = small_mol.instantiate()
 		nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))
-		nutrient.min_time += 15
-		nutrient.max_time += 25
+		#nutrient.min_time += 15
+		#nutrient.max_time += 25
 		add_child(nutrient)
 
 
 func _process(delta: float) -> void:
 	time += delta
-	if time > 5:
+	if time > 3:
 		for i in num:
 			var nutrient = small_mol.instantiate()
 			nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))
-			nutrient.min_time += 15
-			nutrient.max_time += 25
+			#nutrient.min_time += 15
+			#nutrient.max_time += 25
 			add_child(nutrient)
 		time = 0
 		

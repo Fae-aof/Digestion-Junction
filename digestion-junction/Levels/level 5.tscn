@@ -38,7 +38,6 @@ level_scene = "res://Levels/opening.tscn"
 solutions_list = ExtResource("3_ob6w1")
 sprites_list = ExtResource("4_q7eds")
 flask_count = 7
-cheats = true
 disable_milk = false
 disable_bact = false
 

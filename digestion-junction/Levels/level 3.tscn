@@ -39,7 +39,6 @@ level_scene = "res://Levels/level 4.tscn"
 solutions_list = ExtResource("3_2bfy5")
 sprites_list = ExtResource("4_0lwa1")
 flask_count = 7
-cheats = true
 
 [node name="Guide" type="Panel" parent="." unique_id=1112067197]
 offset_left = 103.0

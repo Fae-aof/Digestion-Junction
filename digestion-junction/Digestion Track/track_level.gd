@@ -41,6 +41,7 @@ func _on_to_lab_pressed() -> void:
 
 
 func _on_pour_solution_pressed() -> void:
+	track.area_complete()
 	var incorrect = solution_maker.components.duplicate()
 	for i in solution_maker.components:
 		if answers.has(i):

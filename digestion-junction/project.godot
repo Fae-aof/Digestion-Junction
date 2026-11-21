@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Digestion Junction"
-run/main_scene="uid://c7sf3w0xoi4gs"
+run/main_scene="uid://broflgkg2jq7f"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ Globals="*uid://t7d7xye24l7u"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -44,6 +45,7 @@ lactose=""
 casein=""
 small=""
 movable=""
+teeth=""
 
 [physics]
 

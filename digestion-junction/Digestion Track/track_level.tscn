@@ -83,7 +83,7 @@ position = Vector2(1732, 185)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_x4dda")
 small_mol = ExtResource("9_hoved")
-num = 40
+num = 80
 
 [node name="Bottom_Right" parent="Spawner" index="1" unique_id=41511551]
 position = Vector2(19, 9)
