@@ -23,7 +23,6 @@ var score = 0
 
 func _ready() -> void:
 	peri_array = [peri_1, peri_2, peri_3]
-	position = Vector2(0, 500)
 	barriers = barrier_parent.get_children()
 	current_ans = answers.pop_front()
 
@@ -68,3 +67,8 @@ func _on_friction_pressed() -> void:
 	peri_count += 1;
 	if peri_count >= 3:
 		peri_count = 0
+
+
+func _on_esoph_exit_body_exited(body: Node2D) -> void:
+	if body.is_in_group("small"):
+		body.gravity_scale = 1

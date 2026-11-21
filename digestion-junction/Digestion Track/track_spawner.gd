@@ -5,6 +5,7 @@ extends Node2D
 @export var molecule_list : molecule_List 
 @export var small_mol : PackedScene
 @export var num : int
+@export var cooldown : float
 var nutrient_scene
 var x
 var y
@@ -12,6 +13,8 @@ var y
 var dict
 
 var time = 0
+var on = false
+
 func _ready() -> void:
 	x = bottom_right.position.x
 	y = bottom_right.position.y
@@ -27,7 +30,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time += delta
-	if time > 3:
+	if time > cooldown and on:
 		for i in num:
 			var nutrient = small_mol.instantiate()
 			nutrient.global_position = Vector2(randf_range(-x, x), randf_range(-y, y))

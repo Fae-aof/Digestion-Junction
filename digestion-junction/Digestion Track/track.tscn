@@ -37,7 +37,8 @@ polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -14
 [node name="Barriers" type="StaticBody2D" parent="." unique_id=2080775581]
 
 [node name="Barrier 1" type="CollisionPolygon2D" parent="Barriers" unique_id=1947364506]
-polygon = PackedVector2Array(-41, -458, 22, -458, 24, -491, -51, -493)
+position = Vector2(9, -46)
+polygon = PackedVector2Array(-41, -458, 22, -458, 23.368835, -480.58572, -19, -538, -52, -490)
 
 [node name="Barrier 2" type="CollisionPolygon2D" parent="Barriers" unique_id=189679716]
 position = Vector2(-112, 731)
@@ -65,7 +66,6 @@ position = Vector2(0, 74)
 shape = SubResource("RectangleShape2D_8vrlf")
 
 [node name="Esoph" type="Area2D" parent="." unique_id=1805188069]
-visible = false
 position = Vector2(0, -430)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esoph" unique_id=1982887281]
@@ -78,6 +78,13 @@ shape = SubResource("RectangleShape2D_v5gy4")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Esoph" unique_id=1274592634]
 position = Vector2(-8, 213)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="Esoph_exit" type="Area2D" parent="." unique_id=554008399]
+position = Vector2(0, -430)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esoph_exit" unique_id=1090605570]
+position = Vector2(-8, 401)
 shape = SubResource("RectangleShape2D_v5gy4")
 
 [node name="Friction" type="Button" parent="." unique_id=1327532806]
@@ -116,4 +123,5 @@ position = Vector2(0, -117)
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Teeth" to="." method="_on_teeth_body_entered"]
 [connection signal="body_exited" from="Esoph" to="." method="_on_esoph_body_exited"]
+[connection signal="body_exited" from="Esoph_exit" to="." method="_on_esoph_exit_body_exited"]
 [connection signal="pressed" from="Friction" to="." method="_on_friction_pressed"]

@@ -50,19 +50,6 @@ offset_bottom = 720.0
 icon = ExtResource("2_vb88u")
 flat = true
 
-[node name="Pour Solution" type="Button" parent="." unique_id=968672212 groups=["movable"]]
-offset_left = 1367.0
-offset_top = 189.0
-offset_right = 1549.0
-offset_bottom = 427.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 42
-text = "Pour"
-icon = ExtResource("2_vb88u")
-flat = true
-icon_alignment = 1
-vertical_icon_alignment = 0
-
 [node name="To Lab" type="Button" parent="." unique_id=1669106102 groups=["movable"]]
 offset_left = 1280.0
 offset_top = 598.0
@@ -75,27 +62,29 @@ flat = true
 anchor_mode = 0
 
 [node name="Solution Marker" type="Marker2D" parent="." unique_id=785830186]
-position = Vector2(1898.9999, 448)
+position = Vector2(1872.9999, 448)
 scale = Vector2(1.5875236, 1.5875236)
 
 [node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("6_44aes")]
-position = Vector2(1732, 185)
+position = Vector2(2174, 112)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_x4dda")
 small_mol = ExtResource("9_hoved")
-num = 80
+num = 35
+cooldown = 5.0
 
 [node name="Bottom_Right" parent="Spawner" index="1" unique_id=41511551]
 position = Vector2(19, 9)
 
 [node name="Track Spot" type="Node2D" parent="." unique_id=14424720]
 top_level = true
-position = Vector2(1896, 287)
+position = Vector2(2315, 169)
 
 [node name="Track" parent="Track Spot" unique_id=1179901484 instance=ExtResource("5_x4dda")]
-position = Vector2(0, 494)
+position = Vector2(-22, 534)
 
 [node name="Components List" type="Panel" parent="." unique_id=2067161380 groups=["movable"]]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -126,10 +115,10 @@ theme_override_font_sizes/normal_font_size = 24
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 42.0
-offset_top = 29.0
-offset_right = 337.0
-offset_bottom = 178.0
+offset_left = 89.0
+offset_top = 40.0
+offset_right = 609.0
+offset_bottom = 189.0
 grow_horizontal = 0
 theme_override_styles/panel = ExtResource("9_bjocj")
 
@@ -148,51 +137,54 @@ theme_override_constants/margin_bottom = 20
 [node name="RichTextLabel" type="RichTextLabel" parent="Answers/MarginContainer" unique_id=981664788]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 18
 
 [node name="Up" type="Button" parent="." unique_id=1498635010 groups=["movable"]]
-offset_left = 2249.8901
-offset_top = 344.0
-offset_right = 2431.8901
-offset_bottom = 466.0
+offset_left = 2023.8901
+offset_top = 341.0
+offset_right = 2205.8901
+offset_bottom = 463.0
 rotation = 1.5707964
 scale = Vector2(0.745, 0.745)
 icon = ExtResource("3_uqpas")
 flat = true
 
 [node name="Down" type="Button" parent="." unique_id=1200841701 groups=["movable"]]
-offset_left = 2255.8901
-offset_top = 497.0
-offset_right = 2437.8901
-offset_bottom = 619.0
+offset_left = 2029.8901
+offset_top = 494.0
+offset_right = 2211.8901
+offset_bottom = 616.0
 rotation = 1.5707964
 scale = Vector2(0.745, 0.745)
 icon = ExtResource("2_vb88u")
 flat = true
 
 [node name="Part Label" type="Label" parent="." unique_id=104581283 groups=["movable"]]
-offset_left = 2237.0
-offset_top = 451.0
-offset_right = 2545.0
-offset_bottom = 511.0
+visible = false
+offset_left = 1637.0
+offset_top = 448.0
+offset_right = 1945.0
+offset_bottom = 508.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "At Mouth"
+horizontal_alignment = 2
 
 [node name="Score" type="Label" parent="." unique_id=1486797480 groups=["movable"]]
-offset_left = 2280.0
-offset_top = 647.0
-offset_right = 2508.0
-offset_bottom = 707.0
+offset_left = 1485.9999
+offset_top = 644.0
+offset_right = 1713.9999
+offset_bottom = 704.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "Score: "
 
 [node name="Push" type="Button" parent="." unique_id=1504845376 groups=["movable"]]
-offset_left = 1548.0
-offset_top = 447.0
-offset_right = 1656.0
-offset_bottom = 555.0
+offset_left = 1803.0
+offset_top = 536.0
+offset_right = 1911.0
+offset_bottom = 644.0
+pivot_offset = Vector2(52, 56)
 icon = ExtResource("11_hoved")
 flat = true
 script = ExtResource("12_c1ukn")
@@ -200,7 +192,7 @@ script = ExtResource("12_c1ukn")
 [node name="StaticBody2D" type="StaticBody2D" parent="Push" unique_id=1885295516]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Push/StaticBody2D" unique_id=1435681678]
-position = Vector2(53, 55)
+position = Vector2(55, 55)
 shape = SubResource("CircleShape2D_1vivr")
 
 [node name="Label" type="Label" parent="Push" unique_id=1342905106]
@@ -215,11 +207,86 @@ text = "Click to toggle moving
 Use to push molecules"
 horizontal_alignment = 1
 
+[node name="Pour Solution" type="Button" parent="." unique_id=968672212 groups=["movable"]]
+offset_left = 1468.0
+offset_top = 204.0
+offset_right = 1911.6366
+offset_bottom = 326.0
+scale = Vector2(0.55, 0.55)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Mixture:"
+icon = ExtResource("2_vb88u")
+flat = true
+icon_alignment = 2
+
+[node name="Components" type="GridContainer" parent="." unique_id=246910602 groups=["movable"]]
+offset_left = 1437.0
+offset_top = 282.0
+offset_right = 1741.0001
+offset_bottom = 519.0
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Label" type="Label" parent="Components" unique_id=1157815933]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Components" unique_id=904629848]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Components" unique_id=322065580]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Components" unique_id=142363359]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="Components" unique_id=1776962081]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="Components" unique_id=1987434540]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_font_sizes/font_size = 28
+text = "Starch"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
-[connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
 [connection signal="pressed" from="To Lab" to="." method="_on_to_lab_pressed"]
 [connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
 [connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="Push" to="Push" method="_on_pressed"]
+[connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
 
 [editable path="Spawner"]

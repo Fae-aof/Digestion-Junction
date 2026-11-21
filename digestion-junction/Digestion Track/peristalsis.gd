@@ -10,5 +10,5 @@ func squeeze():
 	tweenR.tween_property(right_push, "position", Vector2(25, 0), time)
 	var tweenL = create_tween()
 	tweenL.tween_property(left_push, "position", Vector2(-25, 0), time)
-	tweenR.tween_property(right_push, "position", Vector2(55, 0), time)
-	tweenL.tween_property(left_push, "position", Vector2(-55, 0), time)
+	tweenR.tween_property(right_push, "position", Vector2(70, 0), time/2)
+	tweenL.tween_property(left_push, "position", Vector2(-70, 0), time/2)
