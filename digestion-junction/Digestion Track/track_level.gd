@@ -28,14 +28,22 @@ var not_moving = true
 var sections = ["At Mouth", "At Stomach", "At Small Intestine"]
 var guide = ["The mouth produces saliva that destroys bacteria, breaks down starch and softens food."]
 
+#Peristalsis
+@onready var but_mark2: Marker2D = $"Game Panel/Marker2D"
+@onready var but_mark: Marker2D = $"Game Panel/Marker2D2"
+@onready var button: Button = $"Game Panel/Button"
+@onready var game_panel: Panel = $"Game Panel"
+
 func _process(delta: float) -> void:
 	score.text = "Score: " + str(track.score)
+	
 	
 func _ready() -> void:
 	labels = components.get_children()
 	part_label.text = sections.pop_front()
 	answers = track.current_ans
 	answer_text.text = guide[0]
+	track.connect("peri_start", peri_start)
 
 func _on_to_track_pressed() -> void:
 	for i in labels:
@@ -54,6 +62,7 @@ func _on_to_lab_pressed() -> void:
 
 
 func _on_pour_solution_pressed() -> void:
+	track.area_complete()
 	var incorrect = solution_maker.components.duplicate()
 	for i in solution_maker.components:
 		if answers.has(i):
@@ -126,3 +135,10 @@ func _on_down_pressed() -> void:
 		solution_maker.offset += Vector2(0, dist)
 		await get_tree().create_timer(0.3).timeout
 		not_moving = true
+
+func _on_button_pressed() -> void:
+	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
+	track.decay = 1
+
+func peri_start():
+	game_panel.show()

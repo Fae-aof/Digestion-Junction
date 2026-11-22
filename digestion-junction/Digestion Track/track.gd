@@ -12,17 +12,20 @@ var current_ans
 
 @onready var top_teeth: CollisionShape2D = $"Teeth/Top teeth"
 @onready var bottom_teeth: CollisionShape2D = $"Teeth/Bottom teeth"
-@onready var peri_1: Node2D = $Peri1
-@onready var peri_2: Node2D = $Peri2
-@onready var peri_3: Node2D = $Peri3
+var teeth_count = 0
+var teeth_moving = false
 
-var peri_array 
-var peri_count = 0
+signal peri_start
+@onready var peristalsis_parent: Marker2D = $"Peristalsis Parent"
+@onready var peri_node = preload("res://Digestion Track/peristalsis_node.tscn")
+var peri_ready = true
+var cooldown = 0
+var decay = 1
 
 var score = 0
 
 func _ready() -> void:
-	peri_array = [peri_1, peri_2, peri_3]
+	peristalsis()
 	barriers = barrier_parent.get_children()
 	current_ans = answers.pop_front()
 
@@ -34,6 +37,9 @@ func area_complete():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
 		move_teeth()
+	if decay > 0:
+		peristalsis()
+	decay -= delta
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("small"):
@@ -45,15 +51,19 @@ func _on_teeth_body_entered(body: Node2D) -> void:
 		body.shrink()
 
 func move_teeth():
-	var y_cord = 74
-	var mid_cord = 30
-	var tweenT = create_tween()
-	tweenT.tween_property(top_teeth, "position", Vector2 (0,-mid_cord), 0.15)
-	var tweenB = create_tween()
-	tweenB.tween_property(bottom_teeth, "position", Vector2 (0,mid_cord), 0.15)
-	tweenT.tween_property(top_teeth, "position", Vector2 (0,-y_cord), 0.15)
-	tweenB.tween_property(bottom_teeth, "position", Vector2 (0,y_cord), 0.15)
-
+	if !teeth_moving:
+		teeth_moving
+		teeth_count += 1
+		var y_cord = 74
+		var mid_cord = 30
+		var tweenT = create_tween()
+		tweenT.tween_property(top_teeth, "position", Vector2 (0,-mid_cord), 0.15)
+		var tweenB = create_tween()
+		tweenB.tween_property(bottom_teeth, "position", Vector2 (0,mid_cord), 0.15)
+		tweenT.tween_property(top_teeth, "position", Vector2 (0,-y_cord), 0.15)
+		tweenB.tween_property(bottom_teeth, "position", Vector2 (0,y_cord), 0.15)
+		if teeth_count > 4:
+			emit_signal("peri_start")
 
 func _on_esoph_body_exited(body: Node2D) -> void:
 	if body.is_in_group("small"):
@@ -61,14 +71,21 @@ func _on_esoph_body_exited(body: Node2D) -> void:
 		body.linear_velocity = Vector2.ZERO
 
 func _on_friction_pressed() -> void:
-	var peri = peri_array[peri_count]
-	for i in peri.get_children():
-		i.squeeze()
-	peri_count += 1;
-	if peri_count >= 3:
-		peri_count = 0
-
+	peristalsis()
 
 func _on_esoph_exit_body_exited(body: Node2D) -> void:
 	if body.is_in_group("small"):
 		body.gravity_scale = 1
+
+func peristalsis():
+	if peri_ready:
+		if cooldown == 0:
+			var new_peri = peri_node.instantiate()
+			peristalsis_parent.add_child(new_peri)
+			cooldown = 3
+		peri_ready = false
+		for i in peristalsis_parent.get_children():
+			i.move()
+		cooldown -= 1
+		await get_tree().create_timer(0.8).timeout
+		peri_ready = true

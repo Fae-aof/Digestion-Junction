@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d2a7eqi5tg1lh" path="res://Digestion Track/Track Molecule.tscn" id="9_hoved"]
 [ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="11_hoved"]
 [ext_resource type="Script" uid="uid://b6m6hpnev7tx3" path="res://Digestion Track/push.gd" id="12_c1ukn"]
+[ext_resource type="StyleBox" uid="uid://cab7kik7st1l2" path="res://Styleboxes/Text Input White.tres" id="13_vp72e"]
+[ext_resource type="Texture2D" uid="uid://bfol37kc2g5p1" path="res://Sprites/Molecules/mol_starch.png" id="14_4e0s8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(1, 0.8980392, 0.75686276, 1)
@@ -282,11 +284,37 @@ text = "Starch"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Game Panel" type="Panel" parent="." unique_id=1675243265 groups=["movable"]]
+visible = false
+offset_left = 1352.0
+offset_top = 81.0
+offset_right = 1875.0
+offset_bottom = 635.0
+theme_override_styles/panel = ExtResource("13_vp72e")
+
+[node name="Button" type="Button" parent="Game Panel" unique_id=177871510]
+layout_mode = 0
+offset_left = 214.99998
+offset_top = 230.99998
+offset_right = 323.0
+offset_bottom = 339.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("14_4e0s8")
+flat = true
+icon_alignment = 1
+
+[node name="Marker2D" type="Marker2D" parent="Game Panel" unique_id=634532084]
+position = Vector2(425, 469)
+
+[node name="Marker2D2" type="Marker2D" parent="Game Panel" unique_id=1642215591]
+position = Vector2(26, 25)
+
 [connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
 [connection signal="pressed" from="To Lab" to="." method="_on_to_lab_pressed"]
 [connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
 [connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="Push" to="Push" method="_on_pressed"]
 [connection signal="pressed" from="Pour Solution" to="." method="_on_pour_solution_pressed"]
+[connection signal="pressed" from="Game Panel/Button" to="." method="_on_button_pressed"]
 
 [editable path="Spawner"]

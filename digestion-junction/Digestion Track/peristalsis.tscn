@@ -7,9 +7,9 @@ script = ExtResource("1_ehp1f")
 
 [node name="Left Push" type="CollisionPolygon2D" parent="." unique_id=1622975802]
 position = Vector2(-70, 0)
-polygon = PackedVector2Array(-32, -25, 48, -37, 37, -25, 23, 47, -29, 67)
+polygon = PackedVector2Array(-32, -25, 48, -37, 37, -25, 23, 27, -29, 35)
 
 [node name="Right Push" type="CollisionPolygon2D" parent="." unique_id=1616489001]
 position = Vector2(70, 0)
 scale = Vector2(-1, 1)
-polygon = PackedVector2Array(-32, -25, 45, -37, 37, -25, 23, 47, -32, 63)
+polygon = PackedVector2Array(-32, -25, 45, -37, 37, -25, 23, 28, -32, 31)
