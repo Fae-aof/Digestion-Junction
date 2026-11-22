@@ -1,5 +1,9 @@
 Welcome to Digestion Junction! A game to learn about the digestive system. Right now we've made the first segment where you need to identify and label different solutions your body uses for digestion which has 5 levels. After completing them, you'll use your knowledge to guide molecules through the digestive track (WIP)
 
+We're making this game under our upcoming game studio, The Grovve. We make educational games for students to learn and revise their school curriculum. Digestion Junction like our other WIP games is made in Godot and uses assets we draw in procreate. Once this game is done, it will feature levels that cover the digestive system unit and be able provide students a way to test their knowledge an engaging manner.
+
+Play the game here: https://the-grovve.itch.io/digestion-junction 
+
 How to Play (identification):
 - Click on the different flasks to add them to the beaker. Then add starch, protein or fat molecules and see how they react!
 - Follow the guide on what each solution does.
