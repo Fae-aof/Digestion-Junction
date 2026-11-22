@@ -87,5 +87,5 @@ func peristalsis():
 		for i in peristalsis_parent.get_children():
 			i.move()
 		cooldown -= 1
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(0.6).timeout
 		peri_ready = true

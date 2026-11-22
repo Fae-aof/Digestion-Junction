@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bxq1kecmlpbc4"]
+
+[ext_resource type="Texture2D" uid="uid://dl67nwkwqjjxw" path="res://Sprites/Screen Panel Frame.png" id="1_38q5d"]
+
+[resource]
+texture = ExtResource("1_38q5d")
+texture_margin_left = 35.0
+texture_margin_top = 35.0
+texture_margin_right = 35.0
+texture_margin_bottom = 35.0

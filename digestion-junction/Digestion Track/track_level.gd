@@ -9,7 +9,10 @@ extends CanvasLayer
 @onready var part_label: Label = $"Part Label"
 @onready var track: StaticBody2D = $"Track Spot/Track"
 @onready var score: Label = $Score
-@onready var components: GridContainer = $Components
+@onready var components: GridContainer = $Answers2/MarginContainer/Components
+
+
+var at_lab = true
 
 @onready var answer_text: RichTextLabel = $Answers/MarginContainer/RichTextLabel
 var labels
@@ -25,10 +28,11 @@ var done_count = 0
 
 var not_moving = true
 
-var sections = ["At Mouth", "At Stomach", "At Small Intestine"]
+var sections = 0
 var guide = ["The mouth produces saliva that destroys bacteria, breaks down starch and softens food."]
 
 #Peristalsis
+var peri_startable = false
 @onready var but_mark2: Marker2D = $"Game Panel/Marker2D"
 @onready var but_mark: Marker2D = $"Game Panel/Marker2D2"
 @onready var button: Button = $"Game Panel/Button"
@@ -36,33 +40,38 @@ var guide = ["The mouth produces saliva that destroys bacteria, breaks down star
 
 func _process(delta: float) -> void:
 	score.text = "Score: " + str(track.score)
+	if sections > 0 and peri_startable:
+		game_panel.show()
 	
 	
 func _ready() -> void:
 	labels = components.get_children()
-	part_label.text = sections.pop_front()
 	answers = track.current_ans
 	answer_text.text = guide[0]
 	track.connect("peri_start", peri_start)
 
 func _on_to_track_pressed() -> void:
-	for i in labels:
-		i.text = ""
-		i.add_theme_color_override("font_color", Color("3c1902"))
-	var count = 0
-	for i in solution_maker.components:
-		labels[count].text = i
-		count += 1
-	var tween = create_tween()
-	tween.tween_property(camera, "global_position", camera.global_position + Vector2(1280, 0), 0.4)
-
+	if at_lab:
+		for i in labels:
+			i.text = ""
+			i.add_theme_color_override("font_color", Color("3c1902"))
+		var count = 0
+		for i in solution_maker.components:
+			labels[count].text = i
+			count += 1
+		var tween = create_tween()
+		tween.tween_property(camera, "global_position", camera.global_position + Vector2(1280, 0), 0.4)
+		at_lab = false
+	
 func _on_to_lab_pressed() -> void:
-	var tween = create_tween()
-	tween.tween_property(camera, "global_position", camera.global_position - Vector2(1280, 0), 0.4)
-
+	if !at_lab:
+		var tween = create_tween()
+		tween.tween_property(camera, "global_position", camera.global_position - Vector2(1280, 0), 0.4)
+		at_lab = true
 
 func _on_pour_solution_pressed() -> void:
 	track.area_complete()
+	sections += 1
 	var incorrect = solution_maker.components.duplicate()
 	for i in solution_maker.components:
 		if answers.has(i):
@@ -70,7 +79,6 @@ func _on_pour_solution_pressed() -> void:
 			if !correct.has(i):
 				correct.append(i)
 				done_count += 1
-	label.text = ""
 	for i in labels:
 		if correct.has(i.text):
 			i.add_theme_color_override("font_color", Color("196b00"))
@@ -81,8 +89,6 @@ func _on_pour_solution_pressed() -> void:
 		answers = track.current_ans
 		correct = []
 		done_count = 0
-		if sections != []:
-			part_label.text = sections.pop_front()
 	#for i in correct:
 		#label.push_color("196b00")
 		#label.append_text(i + "\n")
@@ -138,7 +144,7 @@ func _on_down_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
-	track.decay = 1
+	track.decay = 1.5
 
 func peri_start():
-	game_panel.show()
+	peri_startable = true

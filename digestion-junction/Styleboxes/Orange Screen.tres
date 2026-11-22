@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://br3eucqjtj0sg"]
+
+[ext_resource type="Texture2D" uid="uid://dycl0sowdorj7" path="res://Sprites/Screen Frame Thinner.png" id="1_d0p0w"]
+
+[resource]
+texture = ExtResource("1_d0p0w")
+texture_margin_left = 35.0
+texture_margin_top = 35.0
+texture_margin_right = 35.0
+texture_margin_bottom = 35.0
