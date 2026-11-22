@@ -31,12 +31,12 @@ constant_force = Vector2(0.1, 0)
 script = ExtResource("1_ttyus")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=644171979]
-scale = Vector2(0.21, 0.21)
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_1vivr")
 animation = &"Molecule"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=501776737]
-scale = Vector2(0.21, 0.21)
+scale = Vector2(0.18, 0.18)
 shape = SubResource("CircleShape2D_1vivr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

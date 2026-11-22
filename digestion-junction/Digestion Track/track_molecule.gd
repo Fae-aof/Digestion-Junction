@@ -12,23 +12,20 @@ func shrink():
 		var random = randi_range(1, 9)
 		if random > 7:
 			for i in randi_range(2, 3):
-				var mol = bit_scene.instantiate()
-				mol.set_deferred("global_position", global_position) 
-				get_parent().add_child(mol)
+				call_deferred("spawn_bit", global_position)
 			queue_free()
 		else:
 			bites_cap -= 1
 	else:
 		for i in randi_range(2, 3):
-			var mol = bit_scene.instantiate()
-			mol.set_deferred("global_position", global_position) 
-			get_parent().add_child(mol)
+			call_deferred("spawn_bit", global_position)
 		queue_free()
 	
+func spawn_bit(pos : Vector2):
+	var mol = bit_scene.instantiate()
+	get_parent().add_child(mol)
+	mol.global_position = pos
 	
-
-
-
 
 
 

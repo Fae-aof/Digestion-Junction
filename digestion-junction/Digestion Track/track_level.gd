@@ -14,7 +14,8 @@ extends CanvasLayer
 
 var at_lab = true
 
-@onready var answer_text: RichTextLabel = $Answers/MarginContainer/RichTextLabel
+@onready var prompt_title: Label = $"Prompts/MarginContainer/VBoxContainer/Prompt Title"
+@onready var prompt_desc: Label = $"Prompts/MarginContainer/VBoxContainer/Prompt Desc"
 var labels
 
 @onready var push: Button = $Push
@@ -29,26 +30,47 @@ var done_count = 0
 var not_moving = true
 
 var sections = 0
-var guide = ["The mouth produces saliva that destroys bacteria, breaks down starch and softens food."]
+var titles = ["Mix the correct solutions:", "Bite the food:", 
+			"Push the food down the gullet:", "Mix the correct solutions:", "Push molecules and mix the solution:", "You Win!"]
+var guide = ["The mouth produces saliva that destroys bacteria, breaks down starch and softens food.", "Press the down arrow key to break the molecules into smaller pieces.",
+			"Click the yellow ball to activate peristalsis, movement that pushes the food down the gullet.",
+			"The stomach produces acid that lowers the pH, pepsin, rennin and mucus.",
+			"Use the ball to push molecules into the small intestine. The small intestine breaks down lactose, maltose, fats and proteins.",
+			"Congradtulations! You completed Digestion Junction!"]
 
 #Peristalsis
 var peri_startable = false
+var peri_ongoing = false
 @onready var but_mark2: Marker2D = $"Game Panel/Marker2D"
 @onready var but_mark: Marker2D = $"Game Panel/Marker2D2"
 @onready var button: Button = $"Game Panel/Button"
 @onready var game_panel: Panel = $"Game Panel"
 
+#guide
+@onready var guide_panel: MarginContainer = $"Solution Maker/MarginContainer"
+@onready var close: Button = $"Solution Maker/Close"
+
+
 func _process(delta: float) -> void:
 	score.text = "Score: " + str(track.score)
 	if sections > 0 and peri_startable:
 		game_panel.show()
-	
+		peri_startable = false
+	if peri_ongoing and track.bit_count < 4:
+		update_prompt()
+		game_panel.hide()
+		track.decay = 35
+		peri_ongoing = false
 	
 func _ready() -> void:
 	labels = components.get_children()
 	answers = track.current_ans
-	answer_text.text = guide[0]
+	update_prompt()
 	track.connect("peri_start", peri_start)
+
+func update_prompt():
+	prompt_title.text = titles.pop_front()
+	prompt_desc.text = guide.pop_front()
 
 func _on_to_track_pressed() -> void:
 	if at_lab:
@@ -70,8 +92,9 @@ func _on_to_lab_pressed() -> void:
 		at_lab = true
 
 func _on_pour_solution_pressed() -> void:
-	track.area_complete()
-	sections += 1
+	#track.area_complete()
+	#update_prompt()
+	#sections += 1
 	var incorrect = solution_maker.components.duplicate()
 	for i in solution_maker.components:
 		if answers.has(i):
@@ -86,6 +109,8 @@ func _on_pour_solution_pressed() -> void:
 			i.add_theme_color_override("font_color", Color("8b0000"))
 	if done_count == answers.size() and incorrect == []:
 		track.area_complete()
+		sections += 1
+		update_prompt()
 		answers = track.current_ans
 		correct = []
 		done_count = 0
@@ -143,8 +168,19 @@ func _on_down_pressed() -> void:
 		not_moving = true
 
 func _on_button_pressed() -> void:
+	peri_ongoing = true
 	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
 	track.decay = 1.5
 
 func peri_start():
+	update_prompt()
 	peri_startable = true
+
+
+func _on_guide_button_pressed() -> void:
+	guide_panel.show()
+	close.show()
+
+func _on_close_pressed() -> void:
+	guide_panel.hide()
+	close.hide()

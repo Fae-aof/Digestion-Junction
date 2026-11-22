@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://pq51ax110xmx"]
+
+[ext_resource type="Script" uid="uid://brg0jnjiksmam" path="res://Levels/start_menu.gd" id="1_f0cgl"]
+[ext_resource type="Texture2D" uid="uid://dycl0sowdorj7" path="res://Sprites/Screen Frame Thinner.png" id="2_68low"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="2_cto2n"]
+[ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="4_4m1pc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mougn"]
+bg_color = Color(0.92, 0.7777067, 0.62560004, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybt5h"]
+texture = ExtResource("2_68low")
+texture_margin_left = 35.0
+texture_margin_top = 35.0
+texture_margin_right = 35.0
+texture_margin_bottom = 35.0
+
+[node name="Opening" type="CanvasLayer" unique_id=333958358]
+script = ExtResource("1_f0cgl")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1837228720]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mougn")
+
+[node name="Panel" type="Panel" parent="." unique_id=1629148628]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ybt5h")
+
+[node name="Label" type="Label" parent="." unique_id=1083610118]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -591.0
+offset_top = -307.0
+offset_right = 602.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("2_cto2n")
+theme_override_font_sizes/font_size = 67
+text = "Welcome to Digestion Junction!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Solutions" type="Button" parent="." unique_id=1196970384]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -435.0
+offset_top = -405.0
+offset_right = 443.0
+offset_bottom = -305.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("2_cto2n")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = ExtResource("4_4m1pc")
+text = "Play Solution Identification (Start)"
+
+[node name="Track" type="Button" parent="." unique_id=298162068]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -456.0
+offset_top = -259.0
+offset_right = 476.5
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.23529412, 0.09803922, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("2_cto2n")
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = ExtResource("4_4m1pc")
+text = "Play Digestion Track (WIP 2nd Section)"
+
+[connection signal="pressed" from="Solutions" to="." method="_on_solutions_pressed"]
+[connection signal="pressed" from="Track" to="." method="_on_track_pressed"]

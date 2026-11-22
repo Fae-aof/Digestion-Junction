@@ -13,7 +13,7 @@ size = Vector2(225, 61)
 size = Vector2(60, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
-size = Vector2(139, 20)
+size = Vector2(75, 440)
 
 [node name="Track" type="StaticBody2D" unique_id=733336893]
 script = ExtResource("1_8ygy3")
@@ -23,10 +23,10 @@ scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_cg5vd")
 
 [node name="Right 1" type="CollisionPolygon2D" parent="." unique_id=1963449894]
-polygon = PackedVector2Array(85, -367, 119, -488, 116, -649, -116, -696, -200, -663, -145, -616, -9, -586, 15, -560, 15, -494, 7, -359, 26, -21, 88, -6, 97, -195)
+polygon = PackedVector2Array(85, -367, 119, -488, 116, -649, -116, -696, -200, -663, -145, -616, -9, -586, 15, -560, 15, -494, 7, -359, 12.237061, -265.83472, 26, -21, 88, -6, 97, -195)
 
 [node name="Left 1" type="CollisionPolygon2D" parent="." unique_id=1514394002]
-polygon = PackedVector2Array(-243, -558, -163, -501, -92, -494, -87, -435, -71, -18, -20, -20, -26, -508, -51, -531, -85, -547, -185, -573, -203, -587)
+polygon = PackedVector2Array(-243, -558, -163, -501, -92, -494, -87, -435, -71, -18, -20, -20, -26, -508, -51, -531, -85, -547, -185, -573, -202, -602)
 
 [node name="Left 2" type="CollisionPolygon2D" parent="." unique_id=441769106]
 position = Vector2(133, 570)
@@ -107,11 +107,11 @@ flat = true
 [node name="Peristalsis Parent" type="Marker2D" parent="." unique_id=1205739989]
 position = Vector2(-11, -415)
 
-[node name="Peri Start" type="Area2D" parent="." unique_id=161578641]
+[node name="Esophagus" type="Area2D" parent="." unique_id=161578641]
 position = Vector2(0, -363)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peri Start" unique_id=1182651869]
-position = Vector2(-15.5, 73)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esophagus" unique_id=1182651869]
+position = Vector2(-3, 97)
 shape = SubResource("RectangleShape2D_qbdty")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
@@ -119,6 +119,5 @@ shape = SubResource("RectangleShape2D_qbdty")
 [connection signal="body_exited" from="Esoph" to="." method="_on_esoph_body_exited"]
 [connection signal="body_exited" from="Esoph_exit" to="." method="_on_esoph_exit_body_exited"]
 [connection signal="pressed" from="Friction" to="." method="_on_friction_pressed"]
-[connection signal="area_entered" from="Peri Start" to="." method="_on_peri_start_area_entered"]
-[connection signal="area_exited" from="Peri Start" to="." method="_on_peri_start_area_exited"]
-[connection signal="area_shape_entered" from="Peri Start" to="." method="_on_peri_start_area_shape_entered"]
+[connection signal="body_entered" from="Esophagus" to="." method="_on_esophagus_body_entered"]
+[connection signal="body_exited" from="Esophagus" to="." method="_on_esophagus_body_exited"]

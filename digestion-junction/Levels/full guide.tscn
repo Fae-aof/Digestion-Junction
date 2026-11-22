@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://o38257nrejgb"]
+
+[ext_resource type="Texture2D" uid="uid://cbnsjrs8pttoo" path="res://Sprites/Button.png" id="1_6h2ck"]
+[ext_resource type="FontFile" uid="uid://7plxl34vckcd" path="res://Fonts/Lato-Bold.ttf" id="2_18bbg"]
+[ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="3_j46ff"]
+[ext_resource type="Texture2D" uid="uid://bfol37kc2g5p1" path="res://Sprites/Molecules/mol_starch.png" id="4_bqdjf"]
+[ext_resource type="Texture2D" uid="uid://dte0y7biwrxkh" path="res://Sprites/Molecules/mol_protein.png" id="5_s4meg"]
+[ext_resource type="Texture2D" uid="uid://si4u1sqiytdw" path="res://Sprites/Molecules/mol_fats.png" id="6_wpmie"]
+[ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="7_e8ac2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hh8o6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource("1_6h2ck")
+texture_margin_left = 40.0
+texture_margin_top = 30.0
+texture_margin_right = 100.0
+texture_margin_bottom = 30.0
+
+[node name="MarginContainer" type="MarginContainer" unique_id=485784704]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="." unique_id=2111206167]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hh8o6")
+
+[node name="Close" type="Button" parent="Panel" unique_id=723828017]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 331.0
+offset_top = -101.0
+offset_right = 571.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.23685831, 0.10008205, 0.008791575, 1)
+theme_override_fonts/font = ExtResource("2_18bbg")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("3_j46ff")
+text = "Close"
+
+[node name="Label" type="Label" parent="Panel" unique_id=602981342]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 23.0
+offset_right = 553.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "amylase breaks starch into maltose"
+
+[node name="MolStarch" type="Sprite2D" parent="Panel" unique_id=1794842819]
+position = Vector2(596, 41.999992)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("4_bqdjf")
+
+[node name="Label2" type="Label" parent="Panel" unique_id=526763989]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 79.99997
+offset_right = 647.0
+offset_bottom = 136.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "protease breaks protein into polypeptides and amino acids"
+
+[node name="MolStarch2" type="Sprite2D" parent="Panel" unique_id=1874215711]
+position = Vector2(941, 99.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("5_s4meg")
+
+[node name="MolStarch6" type="Sprite2D" parent="Panel" unique_id=53761003]
+position = Vector2(664, 503)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("5_s4meg")
+
+[node name="Label3" type="Label" parent="Panel" unique_id=1324176402]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 134.99997
+offset_right = 647.0
+offset_bottom = 191.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "lipase breaks fats into lipids"
+
+[node name="MolStarch3" type="Sprite2D" parent="Panel" unique_id=1730303145]
+position = Vector2(488, 154.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("6_wpmie")
+
+[node name="MolStarch5" type="Sprite2D" parent="Panel" unique_id=1824486589]
+position = Vector2(1020, 443)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("6_wpmie")
+
+[node name="Label4" type="Label" parent="Panel" unique_id=1777245732]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 185.99997
+offset_right = 647.0
+offset_bottom = 242.99997
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "maltase breaks maltose into glucose"
+
+[node name="MolStarch4" type="Sprite2D" parent="Panel" unique_id=1892130025]
+position = Vector2(601, 205.99997)
+scale = Vector2(0.59999937, 0.59999937)
+texture = ExtResource("7_e8ac2")
+
+[node name="Label5" type="Label" parent="Panel" unique_id=998888337]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 242.0
+offset_right = 907.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "mix water with mucin to make molecules break down faster"
+
+[node name="Label6" type="Label" parent="Panel" unique_id=1627708346]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 304.0
+offset_right = 906.0
+offset_bottom = 346.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "hydrochloric acid makes turn the indicator red"
+
+[node name="Label7" type="Label" parent="Panel" unique_id=577504459]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 364.0
+offset_right = 906.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "sodium hydrogen carbonate turns the indicator dark green"
+
+[node name="Label8" type="Label" parent="Panel" unique_id=650202066]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 422.0
+offset_right = 978.0
+offset_bottom = 464.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "bile breaks fats into smaller globules, lysozyme removes bacteria"
+
+[node name="Label9" type="Label" parent="Panel" unique_id=1827791727]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 480.0
+offset_right = 978.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "pepsin breaks protein into polypeptides"
+
+[node name="Label10" type="Label" parent="Panel" unique_id=840505064]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 536.0
+offset_right = 978.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0.23529412, 0.101960786, 0.007843138, 1)
+theme_override_font_sizes/font_size = 30
+text = "lactase breaks lactose into glucose and galactose"

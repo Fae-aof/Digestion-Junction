@@ -17,7 +17,7 @@ func move():
 	if first:
 		await get_tree().create_timer(0.2).timeout
 		first = false
-	var time = 0.6
+	var time = 0.5
 	var tweenR = create_tween()
 	tweenR.tween_property(right_push, "position", right_push.position + Vector2(0, 18), time)
 	var tweenL = create_tween()

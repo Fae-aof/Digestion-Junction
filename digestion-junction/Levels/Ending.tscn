@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://pq51ax110xmx"]
+[gd_scene format=3 uid="uid://bdn3t1nymxgex"]
 
-[ext_resource type="Script" uid="uid://cukffem8khd5d" path="res://Levels/opening.gd" id="1_ax0uj"]
-[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="1_d3l0r"]
+[ext_resource type="Script" uid="uid://cukffem8khd5d" path="res://Levels/opening.gd" id="1_2yq0t"]
+[ext_resource type="FontFile" uid="uid://vr40trl6tfco" path="res://Fonts/CookedSans-Regular.otf" id="2_33px8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
 bg_color = Color(0.14419526, 0.33424097, 0.41558394, 1)
 
 [node name="Opening" type="CanvasLayer" unique_id=333958358]
-script = ExtResource("1_ax0uj")
+script = ExtResource("1_2yq0t")
 
 [node name="Panel" type="Panel" parent="." unique_id=1629148628]
 anchors_preset = 15
@@ -28,7 +28,7 @@ offset_right = 602.0
 offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_d3l0r")
+theme_override_fonts/font = ExtResource("2_33px8")
 theme_override_font_sizes/font_size = 67
 text = "Thanks for Playing Digestion Junction"
 horizontal_alignment = 1
@@ -46,7 +46,7 @@ offset_right = 355.25
 offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_d3l0r")
+theme_override_fonts/font = ExtResource("2_33px8")
 theme_override_font_sizes/font_size = 47
 theme_override_styles/normal = SubResource("StyleBoxFlat_1vivr")
 text = "Next Section (WIP)"

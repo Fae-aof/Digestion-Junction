@@ -21,6 +21,7 @@ signal peri_start
 var peri_ready = true
 var cooldown = 0
 var decay = 1
+var bit_count = 0
 
 var score = 0
 
@@ -42,16 +43,15 @@ func _process(delta: float) -> void:
 	decay -= delta
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("small"):
+	if body.is_in_group("bit"):
 		score += 1
-
 
 func _on_teeth_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("small")):
 		body.shrink()
 
 func move_teeth():
-	if !teeth_moving:
+	if !teeth_moving and current_ans != mouth_ans:
 		teeth_moving
 		teeth_count += 1
 		var y_cord = 74
@@ -87,5 +87,15 @@ func peristalsis():
 		for i in peristalsis_parent.get_children():
 			i.move()
 		cooldown -= 1
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(0.5).timeout
 		peri_ready = true
+
+func _on_esophagus_body_entered(body: Node2D) -> void:
+	print(body.get_groups())
+	if body.is_in_group("bit"):
+		bit_count += 1
+
+
+func _on_esophagus_body_exited(body: Node2D) -> void:
+	if body.is_in_group("bit"):
+		bit_count -= 1
