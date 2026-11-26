@@ -22,6 +22,7 @@ animations = [{
 radius = 39.22323
 
 [node name="TrackMolecule" type="RigidBody2D" unique_id=246993542 groups=["bit"]]
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_auskg")
 freeze_mode = 1
 continuous_cd = 2

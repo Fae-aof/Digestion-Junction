@@ -7,7 +7,7 @@ extends CanvasLayer
 @onready var label: RichTextLabel = $"Components List/MarginContainer/RichTextLabel"
 @onready var spawner: Node2D = $Spawner
 @onready var part_label: Label = $"Part Label"
-@onready var track: StaticBody2D = $"Track Spot/Track"
+@onready var track: Node2D = $"Track Spot/Track"
 @onready var score: Label = $Score
 @onready var components: GridContainer = $Answers2/MarginContainer/Components
 
@@ -92,9 +92,9 @@ func _on_to_lab_pressed() -> void:
 		at_lab = true
 
 func _on_pour_solution_pressed() -> void:
-	#track.area_complete()
-	#update_prompt()
-	#sections += 1
+	track.area_complete()
+	sections += 1
+	update_prompt()
 	var incorrect = solution_maker.components.duplicate()
 	for i in solution_maker.components:
 		if answers.has(i):
@@ -114,24 +114,6 @@ func _on_pour_solution_pressed() -> void:
 		answers = track.current_ans
 		correct = []
 		done_count = 0
-	#for i in correct:
-		#label.push_color("196b00")
-		#label.append_text(i + "\n")
-	#for i in incorrect:
-		#label.push_color("6b0000")
-		#label.append_text(i + "\n")
-	#if done_count == answers.size():
-		#label.push_font_size(40)
-		#label.push_color("196b00")
-		#label.append_text("All Done!")
-		#track.area_complete()
-		#answers = track.current_ans
-		#correct = []
-		#done_count = 0
-		#answer_text.text = "Mix the following and pour\n" + str(answers)
-		#if sections != []:
-			#part_label.text = sections.pop_front()
-		
 	
 
 func add_solution(components : Array):
@@ -167,10 +149,6 @@ func _on_down_pressed() -> void:
 		await get_tree().create_timer(0.3).timeout
 		not_moving = true
 
-func _on_button_pressed() -> void:
-	peri_ongoing = true
-	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
-	track.decay = 1.5
 
 func peri_start():
 	update_prompt()
@@ -184,3 +162,9 @@ func _on_guide_button_pressed() -> void:
 func _on_close_pressed() -> void:
 	guide_panel.hide()
 	close.hide()
+
+
+func _on_button_pressed() -> void:
+	peri_ongoing = true
+	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
+	track.decay = 1.5

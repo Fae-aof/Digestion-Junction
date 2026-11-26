@@ -7,6 +7,7 @@ extends RigidBody2D
 var too_big = true
 var bites_cap = 4
 
+
 func shrink():
 	if bites_cap > 0:
 		var random = randi_range(1, 9)

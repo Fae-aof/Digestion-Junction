@@ -23,17 +23,27 @@ var cooldown = 0
 var decay = 1
 var bit_count = 0
 
+#Force
+@onready var force_area_parent: Node2D = $"Force Areas"
+@onready var force_areas = force_area_parent.get_children()
+
 var score = 0
 
 func _ready() -> void:
-	peristalsis()
+	#peristalsis()
 	barriers = barrier_parent.get_children()
 	current_ans = answers.pop_front()
+	
+	#force
+	for i in force_areas:
+		i.body_entered.connect(force_entered.bind(i))
+		i.body_exited.connect(force_entered.bind(i))
 
 func area_complete():
 	current_ans = answers.pop_front()
 	var bar = barriers.pop_front()
 	bar.queue_free()
+	force_areas.pop_front().monitoring = true
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
@@ -70,9 +80,6 @@ func _on_esoph_body_exited(body: Node2D) -> void:
 		body.gravity_scale = 0.01
 		body.linear_velocity = Vector2.ZERO
 
-func _on_friction_pressed() -> void:
-	peristalsis()
-
 func _on_esoph_exit_body_exited(body: Node2D) -> void:
 	if body.is_in_group("small"):
 		body.gravity_scale = 1
@@ -99,3 +106,12 @@ func _on_esophagus_body_entered(body: Node2D) -> void:
 func _on_esophagus_body_exited(body: Node2D) -> void:
 	if body.is_in_group("bit"):
 		bit_count -= 1
+
+func force_entered(body: Node2D, area : Area2D):
+	if body.is_in_group("bit"):
+		print(area.get_meta("force_loc"))
+		body.update_force(area.get_meta("force_loc"))
+	
+func force_exited(body: Node2D, area : Area2D):
+	if body.is_in_group("bit"):
+		body.update_force("none")

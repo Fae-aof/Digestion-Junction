@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b1kpobeskp5du"]
+
+[ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="1_feb8i"]
+[ext_resource type="Script" uid="uid://c5flfpcxpy1vv" path="res://testing.gd" id="1_kj3p2"]
+[ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="2_kj3p2"]
+[ext_resource type="PackedScene" uid="uid://d2a7eqi5tg1lh" path="res://Digestion Track/Track Molecule.tscn" id="3_lc7k4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(350, 88.5)
+
+[node name="Testing" type="Node2D" unique_id=1507716256]
+script = ExtResource("1_kj3p2")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1436857849]
+position = Vector2(114, 311)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1161353267]
+polygon = PackedVector2Array(0, -5, 130, 76, 811, 78, 925, -17, 921, 207, -1, 200)
+
+[node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("1_feb8i")]
+position = Vector2(572, 165)
+script = ExtResource("2_kj3p2")
+molecule_list = null
+small_mol = ExtResource("3_lc7k4")
+num = 20
+cooldown = 0.0
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1424151866]
+position = Vector2(572, 165)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1549695592]
+position = Vector2(-11, 178)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="Button" type="Button" parent="." unique_id=1905719755]
+offset_right = 151.0
+offset_bottom = 148.0
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

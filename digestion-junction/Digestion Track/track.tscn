@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cu3glyhuik1e4" path="res://Digestion Track/track.gd" id="1_8ygy3"]
 [ext_resource type="Texture2D" uid="uid://cjwanqxconiqw" path="res://Sprites/lineart of track.PNG" id="2_cg5vd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
-size = Vector2(378.5, 126)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 size = Vector2(225, 61)
 
@@ -15,38 +12,44 @@ size = Vector2(60, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
 size = Vector2(75, 440)
 
-[node name="Track" type="StaticBody2D" unique_id=733336893]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(378.5, 126)
+
+[node name="Track" type="Node2D" unique_id=1314885506]
 script = ExtResource("1_8ygy3")
 
 [node name="LineartOfTrack" type="Sprite2D" parent="." unique_id=258166570]
 scale = Vector2(0.66, 0.66)
 texture = ExtResource("2_cg5vd")
 
-[node name="Right 1" type="CollisionPolygon2D" parent="." unique_id=1963449894]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=505990516]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Right 1" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1963449894]
 polygon = PackedVector2Array(85, -367, 119, -488, 116, -649, -116, -696, -200, -663, -145, -616, -9, -586, 15, -560, 15, -494, 7, -359, 12.237061, -265.83472, 26, -21, 88, -6, 97, -195)
 
-[node name="Left 1" type="CollisionPolygon2D" parent="." unique_id=1514394002]
+[node name="Left 1" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1514394002]
 polygon = PackedVector2Array(-243, -558, -163, -501, -92, -494, -87, -435, -71, -18, -20, -20, -26, -508, -51, -531, -85, -547, -185, -573, -202, -602)
 
-[node name="Left 2" type="CollisionPolygon2D" parent="." unique_id=441769106]
+[node name="Left 2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=441769106]
 position = Vector2(133, 570)
 polygon = PackedVector2Array(-191, -623, -189, -512, -137, -476, -190, -470, -232, -466, -323, -389, -339, -258, -360, -124, -288, -3, -175, 64, -158, 1, -233, -31, -247, -96, -307, -190, -272, -264, -269, -390, -237, -426, -153, -431, -119, -411, -78, -417, -79, -449, -114, -502, -129, -516, -158, -616)
 
-[node name="Right 2" type="CollisionPolygon2D" parent="." unique_id=535582447]
+[node name="Right 2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=535582447]
 position = Vector2(310, 687)
-polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -187, -452, -290, -452, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -176, -202, -190, -127, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
+polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -187, -452, -238.99997, -447.99994, -275.99997, -455.99994, -301.99997, -468.99994, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -176, -202, -190, -127, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
 
 [node name="Barriers" type="StaticBody2D" parent="." unique_id=2080775581]
 
-[node name="Barrier 1" type="CollisionPolygon2D" parent="Barriers" unique_id=1947364506]
+[node name="Mouth" type="CollisionPolygon2D" parent="Barriers" unique_id=1947364506]
 position = Vector2(9, -46)
 polygon = PackedVector2Array(-41, -458, 22, -458, 23.368835, -480.58572, -19, -538, -53, -495, -76, -493)
 
-[node name="Barrier 2" type="CollisionPolygon2D" parent="Barriers" unique_id=189679716]
+[node name="Stomach" type="CollisionPolygon2D" parent="Barriers" unique_id=189679716]
 position = Vector2(-112, 731)
 polygon = PackedVector2Array(-41, -456, 52, -451, 72, -500, -47, -506)
 
-[node name="Barrier 3" type="CollisionPolygon2D" parent="Barriers" unique_id=1211630617]
+[node name="Small intestine" type="CollisionPolygon2D" parent="Barriers" unique_id=1211630617]
 position = Vector2(-14, 1074)
 polygon = PackedVector2Array(-31, -441, 61, -444, 68, -518, -46, -488)
 
@@ -54,15 +57,9 @@ polygon = PackedVector2Array(-31, -441, 61, -444, 68, -518, -46, -488)
 collision_layer = 2
 collision_mask = 2
 
-[node name="Barrier 1" type="CollisionPolygon2D" parent="Barriers2" unique_id=363560822]
+[node name="Mouth 2" type="CollisionPolygon2D" parent="Barriers2" unique_id=363560822]
 position = Vector2(9, -46)
 polygon = PackedVector2Array(-41, -458, 22, -458, 23.368835, -480.58572, -19, -538, -53, -495, -76, -493)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=397681386]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1766917178]
-position = Vector2(3, 710)
-shape = SubResource("RectangleShape2D_1vivr")
 
 [node name="Teeth" type="Area2D" parent="." unique_id=575110342 groups=["teeth"]]
 position = Vector2(-77, -580)
@@ -76,7 +73,7 @@ position = Vector2(-3, 74)
 shape = SubResource("RectangleShape2D_8vrlf")
 
 [node name="Esoph" type="Area2D" parent="." unique_id=1805188069]
-position = Vector2(0, -430)
+position = Vector2(164, -430)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Esoph" unique_id=1982887281]
 position = Vector2(-8, 3)
@@ -97,13 +94,6 @@ position = Vector2(0, -430)
 position = Vector2(-8, 401)
 shape = SubResource("RectangleShape2D_v5gy4")
 
-[node name="Friction" type="Button" parent="." unique_id=1327532806]
-offset_left = -34.0
-offset_top = -469.0
-offset_right = 29.0
-offset_bottom = -14.0
-flat = true
-
 [node name="Peristalsis Parent" type="Marker2D" parent="." unique_id=1205739989]
 position = Vector2(-11, -415)
 
@@ -114,10 +104,43 @@ position = Vector2(0, -363)
 position = Vector2(-3, 97)
 shape = SubResource("RectangleShape2D_qbdty")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Scoring" type="Area2D" parent="." unique_id=397681386]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scoring" unique_id=1766917178]
+position = Vector2(3, 710)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="Force Areas" type="Node2D" parent="." unique_id=815261045]
+
+[node name="Mouth" type="Area2D" parent="Force Areas" unique_id=1273933408]
+position = Vector2(0, -363)
+monitoring = false
+metadata/force_loc = "mouth"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Force Areas/Mouth" unique_id=619739185]
+polygon = PackedVector2Array(-54, -157, -212, -213, -187, -281, 49, -235, 37, -149)
+
+[node name="Stomach" type="Area2D" parent="Force Areas" unique_id=2035135814]
+position = Vector2(0, -363)
+monitoring = false
+metadata/force_loc = "stomach"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Force Areas/Stomach" unique_id=1650635375]
+position = Vector2(123, 773)
+polygon = PackedVector2Array(-54, -157, -198, -207, -139, -264, -140, -258, -110, -232, 53, -238, 37, -149)
+
+[node name="Small intestine" type="StaticBody2D" parent="." unique_id=516021311]
+position = Vector2(123, 410)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small intestine" unique_id=429985225]
+polygon = PackedVector2Array(-250, -158, -246, -76, -180, -18, -67, -9, -11, 56, -9, 80, -63, 8, -201, -13, -268, -89)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Small intestine" unique_id=1562266498]
+polygon = PackedVector2Array(-189, -127, -200, -158, -150, -104, -83, -103, 53, -138, -39, -80, -42, -28, -136, -48, -187, -65)
+
 [connection signal="body_entered" from="Teeth" to="." method="_on_teeth_body_entered"]
 [connection signal="body_exited" from="Esoph" to="." method="_on_esoph_body_exited"]
 [connection signal="body_exited" from="Esoph_exit" to="." method="_on_esoph_exit_body_exited"]
-[connection signal="pressed" from="Friction" to="." method="_on_friction_pressed"]
 [connection signal="body_entered" from="Esophagus" to="." method="_on_esophagus_body_entered"]
 [connection signal="body_exited" from="Esophagus" to="." method="_on_esophagus_body_exited"]
+[connection signal="body_entered" from="Scoring" to="." method="_on_area_2d_body_entered"]

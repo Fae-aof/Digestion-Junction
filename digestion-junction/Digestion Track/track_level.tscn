@@ -116,7 +116,7 @@ position = Vector2(-141, -50)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_x4dda")
 small_mol = ExtResource("9_hoved")
-num = 35
+num = 50
 cooldown = 5.0
 
 [node name="Bottom_Right" parent="Track Spot/Track Spawner" index="1" unique_id=41511551]
