@@ -12,9 +12,9 @@
 [ext_resource type="StyleBox" uid="uid://dxe7ss00688x1" path="res://Styleboxes/Button Orange.tres" id="6_ptpfu"]
 [ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="7_44aes"]
 [ext_resource type="Resource" uid="uid://boticvbrbrxsk" path="res://Digestion Track/Resources/small_mol_list.tres" id="8_x4dda"]
-[ext_resource type="PackedScene" uid="uid://d2a7eqi5tg1lh" path="res://Digestion Track/Track Molecule.tscn" id="9_hoved"]
 [ext_resource type="StyleBox" uid="uid://br3eucqjtj0sg" path="res://Styleboxes/Orange Screen.tres" id="10_vp72e"]
 [ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="11_hoved"]
+[ext_resource type="PackedScene" uid="uid://bd63w5x1guufo" path="res://Digestion Track/Bit Molecule.tscn" id="12_0mwfd"]
 [ext_resource type="Script" uid="uid://b6m6hpnev7tx3" path="res://Digestion Track/push.gd" id="12_c1ukn"]
 [ext_resource type="Texture2D" uid="uid://ci5311r6qhqwo" path="res://Sprites/Artboard 2.png" id="13_vp72e"]
 [ext_resource type="Texture2D" uid="uid://bfol37kc2g5p1" path="res://Sprites/Molecules/mol_starch.png" id="14_4e0s8"]
@@ -112,11 +112,11 @@ top_level = true
 position = Vector2(2315, 169)
 
 [node name="Track Spawner" parent="Track Spot" unique_id=261790585 instance=ExtResource("6_44aes")]
-position = Vector2(-141, -50)
+position = Vector2(-103, 883)
 script = ExtResource("7_44aes")
 molecule_list = ExtResource("8_x4dda")
-small_mol = ExtResource("9_hoved")
-num = 50
+small_mol = ExtResource("12_0mwfd")
+num = 75
 cooldown = 5.0
 
 [node name="Bottom_Right" parent="Track Spot/Track Spawner" index="1" unique_id=41511551]
@@ -399,6 +399,12 @@ position = Vector2(527, 212)
 [node name="Marker2D2" type="Marker2D" parent="Game Panel" unique_id=1642215591]
 position = Vector2(33, 35)
 
+[node name="Testing" type="Button" parent="." unique_id=940215071 groups=["movable"]]
+offset_left = 1545.0
+offset_top = 558.0
+offset_right = 1669.0
+offset_bottom = 649.0
+
 [connection signal="pressed" from="Solution Maker/Guide Button" to="." method="_on_guide_button_pressed"]
 [connection signal="pressed" from="Solution Maker/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="To Track" to="." method="_on_to_track_pressed"]
@@ -408,5 +414,6 @@ position = Vector2(33, 35)
 [connection signal="pressed" from="Push" to="Push" method="_on_pressed"]
 [connection signal="pressed" from="Answers2/Pour Solution" to="." method="_on_pour_solution_pressed"]
 [connection signal="pressed" from="Game Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Testing" to="." method="_on_testing_pressed"]
 
 [editable path="Track Spot/Track Spawner"]

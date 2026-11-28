@@ -168,3 +168,7 @@ func _on_button_pressed() -> void:
 	peri_ongoing = true
 	button.global_position = Vector2(randf_range(but_mark.global_position.x, but_mark2.global_position.x), randf_range(but_mark.global_position.y, but_mark2.global_position.y))
 	track.decay = 1.5
+
+
+func _on_testing_pressed() -> void:
+	track.testing()

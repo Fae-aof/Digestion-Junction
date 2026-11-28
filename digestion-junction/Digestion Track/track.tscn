@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cu3glyhuik1e4" path="res://Digestion Track/track.gd" id="1_8ygy3"]
 [ext_resource type="Texture2D" uid="uid://cjwanqxconiqw" path="res://Sprites/lineart of track.PNG" id="2_cg5vd"]
+[ext_resource type="PackedScene" uid="uid://co71wxdgxlkv" path="res://Spawner/spawner.tscn" id="3_iwefv"]
+[ext_resource type="Script" uid="uid://chscomoh11xkm" path="res://Digestion Track/track_spawner.gd" id="4_yxxdd"]
+[ext_resource type="PackedScene" uid="uid://bd63w5x1guufo" path="res://Digestion Track/Bit Molecule.tscn" id="5_nihj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 size = Vector2(225, 61)
@@ -14,6 +17,52 @@ size = Vector2(75, 440)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
 size = Vector2(378.5, 126)
+
+[sub_resource type="Curve2D" id="Curve2D_cg5vd"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -133, 320, 0, 0, 0, 0, -123, 320, 0, 0, 0, 0, -57, 370, 0, 0, 0, 0, 68, 394)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_iwefv"]
+bake_interval = 67.22
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 99, 446, 0, 0, 0, 0, 107, 339, 0, 0, 0, 0, 144, 306)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_yxxdd"]
+bake_interval = 37.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 126, 542, 0, 0, 0, 0, 106, 520, 0, 0, 0, 0, 94, 483, 0, 0, 0, 0, 55, 430, 0, 0, 0, 0, -30, 418)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_nihj5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -59, 408, 0, 0, 0, 0, -9, 455, 0, 0, 0, 0, 44, 467, 0, 0, 0, 0, 67, 493)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_jbejm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 91, 527, 0, 0, 0, 0, 67, 533, 0, 0, 0, 0, 52, 539, 0, 0, 0, 0, 29, 535, 0, 0, 0, 0, 12, 521, 0, 0, 0, 0, -16, 496, 0, 0, 0, 0, -58, 468, 0, 0, 0, 0, -98, 395, 0, 0, 0, 0, -121, 364)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_effgm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 170, 268, 0, 0, 0, 0, 145, 398, 0, 0, 0, 0, 119, 510)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_3vi2n"]
+bake_interval = 200.43
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -89, 340, 0, 0, 0, 0, -57, 370, 0, 0, 0, 0, -13, 385, 0, 0, 0, 0, 68, 394, 0, 0, 0, 0, 96, 410, 0, 0, 0, 0, 107, 332, 0, 0, 0, 0, 157, 304, 0, 0, 0, 0, 129, 469, 0, 0, 0, 0, 117, 510, 0, 0, 0, 0, 106, 517, 0, 0, 0, 0, 101, 503, 0, 0, 0, 0, 94, 480, 0, 0, 0, 0, 51, 428, 0, 0, 0, 0, -37, 419, 0, 0, 0, 0, -25, 444, 0, 0, 0, 0, 49, 477, 0, 0, 0, 0, 68, 530, 0, 0, 0, 0, 27, 536, 0, 0, 0, 0, -50, 480, 0, 0, 0, 0, -101, 389, 0, 0, 0, 0, -132, 363, 0, 0, 0, 0, -142, 387, 0, 0, 0, 0, -80, 534)
+}
+point_count = 23
 
 [node name="Track" type="Node2D" unique_id=1314885506]
 script = ExtResource("1_8ygy3")
@@ -33,11 +82,11 @@ polygon = PackedVector2Array(-243, -558, -163, -501, -92, -494, -87, -435, -71, 
 
 [node name="Left 2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=441769106]
 position = Vector2(133, 570)
-polygon = PackedVector2Array(-191, -623, -189, -512, -137, -476, -190, -470, -232, -466, -323, -389, -339, -258, -360, -124, -288, -3, -175, 64, -158, 1, -233, -31, -247, -96, -307, -190, -272, -264, -269, -390, -237, -426, -153, -431, -119, -411, -78, -417, -79, -449, -114, -502, -129, -516, -158, -616)
+polygon = PackedVector2Array(-191, -623, -189, -512, -137, -476, -190, -470, -232, -466, -323, -389, -339, -258, -360, -124, -288, -3, -175, 64, -158, 1, -234.99998, -36.99994, -254.99998, -95.99994, -297, -191.99994, -272, -264, -269, -390, -237, -426, -153, -431, -119, -411, -78, -417, -79, -449, -114, -502, -129, -516, -158, -616)
 
 [node name="Right 2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=535582447]
 position = Vector2(310, 687)
-polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -187, -452, -238.99997, -447.99994, -275.99997, -455.99994, -301.99997, -468.99994, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -176, -202, -190, -127, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
+polygon = PackedVector2Array(-282, -709, -222, -662, -152, -669, -116, -600, -143, -503, -187, -452, -238.99997, -447.99994, -275.99997, -455.99994, -301.99997, -468.99994, -343, -493, -377, -493, -387, -458, -380, -424, -356, -353, -279, -353, -201, -373, -131, -417, -140, -303, -171.99997, -194.99994, -184.99997, -177.99994, -216.99997, -172.99994, -228.99997, -139.99994, -290, -134, -277, -78, -221, -74, -163, -73, -63, -286, -92, -507, -94, -708, -269, -742)
 
 [node name="Barriers" type="StaticBody2D" parent="." unique_id=2080775581]
 
@@ -133,10 +182,135 @@ polygon = PackedVector2Array(-54, -157, -198, -207, -139, -264, -140, -258, -110
 position = Vector2(123, 410)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small intestine" unique_id=429985225]
-polygon = PackedVector2Array(-250, -158, -246, -76, -180, -18, -67, -9, -11, 56, -9, 80, -63, 8, -201, -13, -268, -89)
+polygon = PackedVector2Array(-250, -158, -246, -76, -180, -18, -60, -5, -22, 22, 4, -73, 20, -91, -6.487793, 31.138138, -7, 59, -21, 56, -63, 8, -180, -4, -174, 24, -140, 55, -87, 75, -80, 109, -103, 82, -145, 67, -183, 32, -201, -13, -268, -89)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Small intestine" unique_id=1562266498]
 polygon = PackedVector2Array(-189, -127, -200, -158, -150, -104, -83, -103, 53, -138, -39, -80, -42, -28, -136, -48, -187, -65)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Small intestine" unique_id=1717380663]
+position = Vector2(2, 0)
+polygon = PackedVector2Array(-30, 144, -32, 107, -43, 73, -84, 33, -145, 17, -135, 27, -93, 45, -51, 84, -45, 131, -76, 139, -115, 142, -132, 111, -186, 83, -240, -19, -234, 17, -205, 80, -181, 114, -199, 144, -153, 167)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1464637718]
+position = Vector2(0, 462)
+
+[node name="Spawner" parent="." unique_id=261790585 instance=ExtResource("3_iwefv")]
+position = Vector2(-72, 361)
+script = ExtResource("4_yxxdd")
+molecule_list = null
+small_mol = ExtResource("5_nihj5")
+num = 70
+cooldown = 0.0
+
+[node name="Bottom_Right" parent="Spawner" index="1" unique_id=41511551]
+position = Vector2(12, -1)
+
+[node name="TrackMolecule" parent="Spawner" unique_id=246993542 instance=ExtResource("5_nihj5")]
+position = Vector2(-50.11315, -32.19406)
+
+[node name="Intesetine Peri Parent" type="Node2D" parent="." unique_id=936427632]
+visible = false
+
+[node name="Path2D" type="Path2D" parent="Intesetine Peri Parent" unique_id=601002267]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_cg5vd")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D" unique_id=1882643006]
+position = Vector2(-133, 320)
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D/Intestine Path" unique_id=1534775031]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D/Intestine Path/Small intestine2" unique_id=888473541]
+position = Vector2(-23, -5)
+polygon = PackedVector2Array(-4.4875183, 2, 46.4104, 2, 48, 10, -6, 10)
+
+[node name="Path2D2" type="Path2D" parent="Intesetine Peri Parent" unique_id=1602657624]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_iwefv")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D2" unique_id=1059213473]
+position = Vector2(99, 446)
+rotation = -1.4961689
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D2/Intestine Path" unique_id=542882496]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D2/Intestine Path/Small intestine2" unique_id=1736326641]
+position = Vector2(-21.47444, -0.37663364)
+polygon = PackedVector2Array(-4.4875183, 2, 34.538574, 2.0000153, 47.79135, 2, 48, 10, -6, 10)
+
+[node name="Path2D3" type="Path2D" parent="Intesetine Peri Parent" unique_id=1890508177]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_yxxdd")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D3" unique_id=193862218]
+position = Vector2(126, 542)
+rotation = -2.3086114
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D3/Intestine Path" unique_id=351226806]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D3/Intestine Path/Small intestine2" unique_id=313097206]
+position = Vector2(-21.47444, -0.37663364)
+polygon = PackedVector2Array(-4.4875183, 2, 34.538574, 2.0000153, 47.79135, 2, 48, 10, -6, 10)
+
+[node name="Path2D4" type="Path2D" parent="Intesetine Peri Parent" unique_id=547977462]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_nihj5")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D4" unique_id=542402731]
+position = Vector2(-59, 408)
+rotation = 0.7544802
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D4/Intestine Path" unique_id=937033947]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D4/Intestine Path/Small intestine2" unique_id=326667910]
+position = Vector2(-21.47444, -0.37663364)
+polygon = PackedVector2Array(-4.4875183, 2, 34.538574, 2.0000153, 47.79135, 2, 48, 10, -2.8949585, 9.285423)
+
+[node name="Path2D5" type="Path2D" parent="Intesetine Peri Parent" unique_id=126133927]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_jbejm")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D5" unique_id=541660206]
+position = Vector2(91, 527)
+rotation = 2.896614
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D5/Intestine Path" unique_id=857109005]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D5/Intestine Path/Small intestine2" unique_id=82637536]
+position = Vector2(-21.47444, -0.37663364)
+polygon = PackedVector2Array(-4.4875183, 2, 34.538574, 2.0000153, 47.79135, 2, 48, 10, -2.8949585, 9.285423)
+
+[node name="Path2D6" type="Path2D" parent="Intesetine Peri Parent" unique_id=984300915]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_effgm")
+
+[node name="Intestine Path" type="PathFollow2D" parent="Intesetine Peri Parent/Path2D6" unique_id=355881102]
+position = Vector2(170, 268)
+rotation = 1.7607846
+
+[node name="Small intestine2" type="StaticBody2D" parent="Intesetine Peri Parent/Path2D6/Intestine Path" unique_id=1713092082]
+position = Vector2(7.891159, -4.767578)
+rotation = 1.5707964
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Intesetine Peri Parent/Path2D6/Intestine Path/Small intestine2" unique_id=256677753]
+position = Vector2(-21.47444, -0.37663364)
+polygon = PackedVector2Array(-4.4875183, 2, 34.538574, 2.0000153, 47.79135, 2, 48, 10, -2.8949585, 9.285423)
+
+[node name="Intesetine Peri Parent2" type="Node2D" parent="." unique_id=340941505 groups=["path"]]
+
+[node name="Path2D" type="Path2D" parent="Intesetine Peri Parent2" unique_id=543010131]
+position = Vector2(-1, -1)
+curve = SubResource("Curve2D_3vi2n")
 
 [connection signal="body_entered" from="Teeth" to="." method="_on_teeth_body_entered"]
 [connection signal="body_exited" from="Esoph" to="." method="_on_esoph_body_exited"]
@@ -144,3 +318,5 @@ polygon = PackedVector2Array(-189, -127, -200, -158, -150, -104, -83, -103, 53, 
 [connection signal="body_entered" from="Esophagus" to="." method="_on_esophagus_body_entered"]
 [connection signal="body_exited" from="Esophagus" to="." method="_on_esophagus_body_exited"]
 [connection signal="body_entered" from="Scoring" to="." method="_on_area_2d_body_entered"]
+
+[editable path="Spawner"]

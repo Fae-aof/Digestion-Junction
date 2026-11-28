@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dj21tvj7oexi1" path="res://Sprites/Molecules/mol_maltose.png" id="2_ua7y6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_auskg"]
-friction = 2.5
+friction = 0.0
 absorbent = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vivr"]
@@ -24,6 +24,7 @@ radius = 39.22323
 [node name="TrackMolecule" type="RigidBody2D" unique_id=246993542 groups=["bit"]]
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_auskg")
+gravity_scale = 0.0
 freeze_mode = 1
 continuous_cd = 2
 constant_force = Vector2(0.1, 0)

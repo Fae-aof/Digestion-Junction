@@ -4,17 +4,20 @@ extends Node2D
 
 var barriers = []
 
+#barrier removal
 var mouth_ans = ["mucin", "water", "amylase", "lysozyme"]
 var stomach_ans = ["rennin", "pepsin", "water", "mucin", "hydrochloric acid"]
 var intestine_ans = ["maltase", "lactase", "protease", "lipase"]
 var answers = [mouth_ans, stomach_ans, intestine_ans]
 var current_ans
 
+#teeth
 @onready var top_teeth: CollisionShape2D = $"Teeth/Top teeth"
 @onready var bottom_teeth: CollisionShape2D = $"Teeth/Bottom teeth"
 var teeth_count = 0
 var teeth_moving = false
 
+#peristalsis
 signal peri_start
 @onready var peristalsis_parent: Marker2D = $"Peristalsis Parent"
 @onready var peri_node = preload("res://Digestion Track/peristalsis_node.tscn")
@@ -27,17 +30,26 @@ var bit_count = 0
 @onready var force_area_parent: Node2D = $"Force Areas"
 @onready var force_areas = force_area_parent.get_children()
 
+#intestion peristalsis
+var intestine_peri = false
+#@onready var intesetine_peri_parent: Node2D = $"Intesetine Peri Parent"
+var intestines = []
+@onready var intesetine_peri_parent: Node2D = $"Intesetine Peri Parent2"
+
+
 var score = 0
 
 func _ready() -> void:
 	#peristalsis()
 	barriers = barrier_parent.get_children()
 	current_ans = answers.pop_front()
+	intestine_peri = true
+	intestines = intesetine_peri_parent.get_children()
 	
 	#force
 	for i in force_areas:
 		i.body_entered.connect(force_entered.bind(i))
-		i.body_exited.connect(force_entered.bind(i))
+		i.body_exited.connect(force_exited.bind(i))
 
 func area_complete():
 	current_ans = answers.pop_front()
@@ -50,7 +62,11 @@ func _process(delta: float) -> void:
 		move_teeth()
 	if decay > 0:
 		peristalsis()
-	decay -= delta
+	#decay -= delta
+	#if intestine_peri:
+		#for i in intestines:
+			#var follow = i.get_node("Intestine Path")
+			#follow.progress += 1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bit"):
@@ -115,3 +131,6 @@ func force_entered(body: Node2D, area : Area2D):
 func force_exited(body: Node2D, area : Area2D):
 	if body.is_in_group("bit"):
 		body.update_force("none")
+
+func testing():
+	intestine_peri = true
