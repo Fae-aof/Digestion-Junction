@@ -70,6 +70,9 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bit"):
+		body.gravity_scale = 1
+		body.in_intestine = false
+		body.destroy()
 		score += 1
 
 func _on_teeth_body_entered(body: Node2D) -> void:
@@ -134,3 +137,15 @@ func force_exited(body: Node2D, area : Area2D):
 
 func testing():
 	intestine_peri = true
+
+
+func _on_stomach_exit_body_exited(body: Node2D) -> void:
+	if body.is_in_group("bit"):
+		body.update_force("none")
+		body.in_intestine = true
+
+
+func _on_small_intestine_exit_body_entered(body: Node2D) -> void:
+	if body.is_in_group("bit"):
+		body.in_intestine = true
+		body.enter_big()

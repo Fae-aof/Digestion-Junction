@@ -12,7 +12,7 @@ extends CanvasLayer
 @onready var components: GridContainer = $Answers2/MarginContainer/Components
 
 
-var at_lab = true
+var at_lab = false
 
 @onready var prompt_title: Label = $"Prompts/MarginContainer/VBoxContainer/Prompt Title"
 @onready var prompt_desc: Label = $"Prompts/MarginContainer/VBoxContainer/Prompt Desc"
