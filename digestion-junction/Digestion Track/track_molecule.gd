@@ -26,7 +26,6 @@ func spawn_bit(pos : Vector2):
 	var mol = bit_scene.instantiate()
 	get_parent().add_child(mol)
 	mol.global_position = pos
-	
 
 
 

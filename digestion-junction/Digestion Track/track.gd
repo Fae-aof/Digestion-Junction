@@ -81,18 +81,20 @@ func _on_teeth_body_entered(body: Node2D) -> void:
 
 func move_teeth():
 	if !teeth_moving and current_ans != mouth_ans:
-		teeth_moving
+		teeth_moving = true
 		teeth_count += 1
 		var y_cord = 74
 		var mid_cord = 30
-		var tweenT = create_tween()
-		tweenT.tween_property(top_teeth, "position", Vector2 (0,-mid_cord), 0.15)
+		#var tweenT = create_tween()
+		#tweenT.tween_property(top_teeth, "position", Vector2 (0,-mid_cord), 0.15)
 		var tweenB = create_tween()
-		tweenB.tween_property(bottom_teeth, "position", Vector2 (0,mid_cord), 0.15)
-		tweenT.tween_property(top_teeth, "position", Vector2 (0,-y_cord), 0.15)
+		tweenB.tween_property(bottom_teeth, "position", Vector2 (0,-19), 0.15)
+		#tweenT.tween_property(top_teeth, "position", Vector2 (0,-y_cord), 0.15)
 		tweenB.tween_property(bottom_teeth, "position", Vector2 (0,y_cord), 0.15)
-		if teeth_count > 4:
+		if teeth_count == 5:
 			emit_signal("peri_start")
+		await get_tree().create_timer(0.3)
+		teeth_moving = false
 
 func _on_esoph_body_exited(body: Node2D) -> void:
 	if body.is_in_group("small"):
@@ -143,6 +145,7 @@ func _on_stomach_exit_body_exited(body: Node2D) -> void:
 	if body.is_in_group("bit"):
 		body.update_force("none")
 		body.in_intestine = true
+		body.gravity_scale = 0
 
 
 func _on_small_intestine_exit_body_entered(body: Node2D) -> void:

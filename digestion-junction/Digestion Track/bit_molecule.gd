@@ -2,13 +2,14 @@ extends RigidBody2D
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
-#@onready var small_path: Path2D = $"../../Track/Intesetine Peri Parent3/Path2D"
-#@onready var large_path: Path2D = $"../../Track/Intesetine Peri Parent3/Path2D2"
-@onready var small_path: Path2D = $"../../Intesetine Peri Parent2/Path2D"
-@onready var large_path: Path2D = $"../../Intesetine Peri Parent2/Path2D2"
+@onready var small_path: Path2D = $"../../Track/Intesetine Peri Parent3/Path2D"
+@onready var large_path: Path2D = $"../../Track/Intesetine Peri Parent3/Path2D2"
+
+#@onready var small_path: Path2D = $"../../Intesetine Peri Parent2/Path2D"
+#@onready var large_path: Path2D = $"../../Intesetine Peri Parent2/Path2D2"
 
 #small intestine
-var force_SI = 15
+var force_SI = 5
 var look_forward = 5
 var in_intestine = false
 var path_2d
@@ -27,10 +28,9 @@ func _ready() -> void:
 	var scl = randf_range(0.08, 0.13)
 	animation.scale = Vector2(scl, scl)
 	collision.scale = Vector2(scl, scl)
-	apply_force(Vector2(10, 2))
 	path_2d = small_path
-	in_intestine = true
-	gravity_scale = 0
+	#in_intestine = true
+	#gravity_scale = 0
 
 func _physics_process(delta: float) -> void:
 	if in_intestine:
